@@ -1,0 +1,98 @@
+.home-card{
+    margin-top: 2vh;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    background-color: whitesmoke;
+    height: 90vh;
+    overflow-y: hidden;
+}
+.card-home{
+    display: flex;
+    /* justify-content: space-betw; */
+    align-items: center;
+    border: 0.1vw solid #969696;
+/* border-radius: 0.2vw; */
+    box-shadow: 0.1vh 0.1vh 0.7em grey; 
+    margin: 2vw;
+    border-radius: 0.2vw;
+    background-color: white;
+
+}
+.home-row{
+    overflow-y: scroll;
+    height: 80%;
+}
+.home-image{
+    width: 90%;
+    height: auto;
+    /* height: 100%; */
+    margin: 5%;
+    
+}
+.home-content{
+    text-align: left;
+}
+.home-image1{
+    width: 100%; 
+    height: 30%;
+}
+.home-row1{
+width: 80%;
+border-width: 0.2vw;
+border-color: black;
+margin-top: 2vh;
+background-color: green; 
+border-radius: 0.2vw;
+margin-left: 10%;
+border: 0.1vw solid #969696;
+/* border-radius: 0.2vw; */
+box-shadow: 0.1vh 0.1vh 0.7em black; 
+height: 80%;
+padding: 1vw;
+overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    width: 0.2vw;
+    height: 3vh;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2vw grey; 
+    border-radius: 0.2vw;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: orange; 
+    border-radius: 0.2vw;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: blue; 
+  }
+
+  /* home styling */ 
+.div-home{
+    display: flex;
+    background-color: rgb(189, 177, 177);
+    justify-content: space-between; 
+    padding: 1vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    height: fit-content;
+    margin-left: 7vw;
+    margin-right: 7vw;
+    margin-top: 4vh;
+}
+.div-home1{
+    background-color: rgb(189, 177, 177);
+    border: none;
+    font-size: 1.2vw;
+}
+.div-home2 input{
+    border: none;
+    font-size: 1vw;
+    padding: 0.1vw;
+}

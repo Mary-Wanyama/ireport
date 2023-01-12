@@ -1,14 +1,20 @@
 
 import './App.css';
-import Home from './Components/Home';
-import MyPosts from './Components/my-posts';
+import Home from './Components/Home/Home';
+import { BrowserRouter, Route, Routes} from "react-router-dom";
+import MyPosts from './Components/Home/my-posts';
+
+
 
 function App() {
   return (
-    <div className="App">
- <Home/>
- <MyPosts />
-    </div>
+    <BrowserRouter>
+        <Routes>
+    <Route path="/Home" exact element={<Home />}/>
+    <Route path="/MyPosts" exact element={<MyPosts />}/>
+        </Routes>
+
+    </BrowserRouter>
   );
 }
 

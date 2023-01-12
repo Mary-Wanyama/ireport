@@ -1,4 +1,5 @@
 import React from "react";
+import "./home.css"
 
 function HomeCard(props) {
  const data = props.data 
@@ -6,16 +7,16 @@ function HomeCard(props) {
 
 
     return(
-        <fragment className="container">
-            <div className="row">
-                <div className="col">
-                <div>
-        {data.map((reports)=>
+            <div className="home-card">
+                
+                <div className="home-row">
+                    <div>
+                    {data.map((reports)=>
                         <div key={reports.id} className='card-home'>
-                            <div>
-                               <img src={reports.image_url} alt="avatar"/> 
+                            <div classname="home-div">
+                               <img src={reports.image_url} alt="avatar" className="home-image"/> 
                             </div>
-                            <div>
+                            <div className="home-content">
                             <h3>{reports.title}</h3>
                         <p>{reports.message}</p>
                         <p>{reports.report_status}</p>
@@ -23,14 +24,18 @@ function HomeCard(props) {
 
                         </div>
         )}
+                    </div>
+
         </div>
-                </div>
-                <div className="col">
+                
+
+                
                 <div>
+                <div className="home-row1">
             {report.map((report)=>
             <div key= {report.id}>
             <div>
-                <img src={report.image_url}/>
+                <img src={report.image_url} className="home-image1"/>
             </div>
             <div>
                 <h4>{report.title}</h4>
@@ -41,9 +46,11 @@ function HomeCard(props) {
 
         </div>
                 </div>
+
+               
             </div>
 
-        </fragment>
+        
     )
 }
 export default HomeCard 
