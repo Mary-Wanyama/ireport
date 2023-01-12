@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Signupform from "./Signupform";
 import Login from "./Login";
-import "../App.css";
+import "./Form.css";
 
 function Register() {
   const [currentForm, setCurrentForm] = useState("login");

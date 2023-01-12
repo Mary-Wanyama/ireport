@@ -1,7 +1,18 @@
 import React from "react";
-import "../App.css";
+import { useState } from "react";
+import "./Form.css";
 
 const Signupform = ({ toggleForm }) => {
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  console.log(form);
   return (
     <div className="auth-form">
       <form className="register-form">
@@ -11,9 +22,18 @@ const Signupform = ({ toggleForm }) => {
           id="username"
           placeholder="username"
           name="username"
+          value={form.username}
+          onChange={handleChange}
         />
-        <label htmlFor="emails">emails</label>
-        <input type="emails" id="emails" placeholder="emails" name="emails" />
+        <label htmlFor="email">emails</label>
+        <input
+          type="email"
+          id="emails"
+          placeholder="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+        />
 
         <label htmlFor="password">Password</label>
         <input
@@ -21,6 +41,8 @@ const Signupform = ({ toggleForm }) => {
           id="password"
           placeholder="**********"
           name="password"
+          value={form.password}
+          onChange={handleChange}
         />
         <button className="btn">Sign-Up</button>
       </form>
