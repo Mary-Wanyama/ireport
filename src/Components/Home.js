@@ -55,13 +55,18 @@ const data = [{
     return(
         <Fragment>
             <div>
+
             <select>
             <option>All incidences</option>
             <option>investigated</option> 
             <option>awaiting investigation</option>
             <option>investigating</option>
         </select>
-        <input placeholder="Search"/> 
+        <form>
+        <input placeholder="Search"/>      
+        <input type="submit" />  
+        </form>
+         
             </div>
             <div>
                 <HomeCard data={data} report={report}/>

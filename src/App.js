@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Profile from './Profile/profile';
 import NewReport from './NewReport/NewReport';
 import Home from './Components/Home';
+import MyPosts from './Components/my-posts';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         {/* <Profile/> */}
         {/* <NewReport/> */}
  <Home/>
+ <MyPosts />
     </div>
   );
 }
