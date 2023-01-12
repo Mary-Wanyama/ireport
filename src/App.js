@@ -12,7 +12,7 @@ function App() {
           <Route exact path="/newreport" element={<NewReport />} />
       </Routes>
         {/* <Profile/> */}
-        <NewReport/>
+        {/* <NewReport/> */}
     </div>
   );
 }

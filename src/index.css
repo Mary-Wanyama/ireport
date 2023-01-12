@@ -15,6 +15,9 @@ code {
 .newreport-div {
   background-color: #007151;
 }
+body {
+  color:#007151;
+}
 
 @tailwind base;
 @tailwind components;
