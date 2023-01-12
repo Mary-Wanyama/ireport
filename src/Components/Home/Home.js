@@ -74,6 +74,7 @@ const data = [{
         report_status: true
     }
  ]
+ 
     return(
         <Fragment>
             <div className="div-home">
