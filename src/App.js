@@ -13,6 +13,7 @@ function App() {
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/newreport" element={<NewReport />} />
           <Route exact path='/home' element={<Home />} />
+          <Route exact path='/myposts' element={<MyPosts />} />
       </Routes>
         {/* <Profile/> */}
         {/* <NewReport/> */}
