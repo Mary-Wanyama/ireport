@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 function Profile() {
   return (
     <div className='bg-gray-200'>
-    <p className=' text-5xl font-bold py-9'>My Profile</p>
+    <p className=' text-5xl text-green-700 font-bold py-9'>My Profile</p>
     <div className='grid justify-items-center ml-8 mb-4'>
         <div className="bg-slate-100 w-1/2 rounded-xl p-9 md:p-0 dark:bg-slate-900 shadow-2xl my-5">
             <figure class="bg-slate-100 rounded-lg p-8 md:p-0 dark:bg-slate-900">
             <div className="flex-col bg-slate-100 rounded-xl p-9 dark:bg-slate-900">
+              {/* {user-image} */}
   <img className="rounded-full h-32 w-32 mx-auto" src="https://w7.pngwing.com/pngs/632/307/png-transparent-paper-planes-send-newsletter-icon-blue-tinker-thumbnail.png" alt=""/>
   <div className="pt-6 flex-initial w-96 text-center mx-auto space-y-4">
     <blockquote>
