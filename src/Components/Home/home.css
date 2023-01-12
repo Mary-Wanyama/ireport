@@ -96,3 +96,29 @@ overflow-y: scroll;
     font-size: 1vw;
     padding: 0.1vw;
 }
+.avatar-div{
+    width: 3vw;
+    height: 3vw;
+    background-color: red;
+}
+.avatar-image{
+    height: 100%; 
+    width: 100%;
+}
+.post-div{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 1vw;
+}
+.post-div2{
+    margin-left: 20%;
+    /* font-size: 1.2vw; */
+}
+.post-div2 input{
+    font-size: 1vw;
+    background-color: rgb(241, 237, 237);
+    border: none;
+    padding: 0.5vw;
+}

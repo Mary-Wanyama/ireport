@@ -1,5 +1,6 @@
 import React from "react"; 
 import HomeCard from "./home-card";
+import Avatar from "./avatar";
 
 function MyPosts() {
 //         const urlPath = "https://arcane-lake-46873.herokuapp.com/students"
@@ -75,12 +76,13 @@ const datas = [{
  ]
     return(
         <fragment>
-            <div>
+            <div className="post-div">
             <h3>My Posts</h3> 
+            <Avatar />
             </div>
             
-            <form>
-            <input type='text' /> 
+            <form className="post-div2">
+            <input type='text' placeholder="filter"/> 
             <input type="submit"/>
             </form>
             <HomeCard data={datas} report={reports}/>

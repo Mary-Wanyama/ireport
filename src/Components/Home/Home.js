@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import HomeCard from "./home-card";
+import { Autocomplete } from "@react-google-maps/api";
 
 function Home() {
 //     const urlPath = "https://arcane-lake-46873.herokuapp.com/students"
@@ -84,6 +85,7 @@ const data = [{
             <option>investigating</option>
         </select>
         <form className="div-home2">
+         
         <input placeholder="Search"/>      
         <input type="submit" />  
         </form>
