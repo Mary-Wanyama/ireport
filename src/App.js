@@ -3,8 +3,8 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Profile from './Profile/profile';
 import NewReport from './NewReport/NewReport';
-import Home from './Components/Home';
-import MyPosts from './Components/my-posts';
+import Home from './Components/Home/Home';
+import MyPosts from './Components/Home/my-posts';
 import Maps from './Components/maps';
 
 function App() {
@@ -17,10 +17,6 @@ function App() {
           <Route exact path='/myposts' element={<MyPosts />} />
           <Route exact path='/map' element={<Maps />} />
       </Routes>
-        {/* <Profile/> */}
-        {/* <NewReport/> */}
- <Home/>
- <MyPosts />
     </div>
   );
 }
