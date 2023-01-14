@@ -6,6 +6,7 @@ import NewReport from './NewReport/NewReport';
 import Home from './Components/Home/Home';
 import MyPosts from './Components/Home/my-posts';
 import Maps from './Components/maps';
+import Test from './Components/Home/test';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path='/home' element={<Home />} />
           <Route exact path='/myposts' element={<MyPosts />} />
           <Route exact path='/map' element={<Maps />} />
+          <Route exact path='/Test' element={<Test />} />
       </Routes>
     </div>
   );

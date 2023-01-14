@@ -1,9 +1,8 @@
 import React from "react";
 import "./home.css"
 
-function HomeCard(props) {
- const data = props.data 
- const report = props.report
+function HomeCard({data, report, handleData}) {
+
 
 
     return(
@@ -12,13 +11,13 @@ function HomeCard(props) {
                 <div className="home-row">
                     <div>
                     {data.map((reports)=>
-                        <div key={reports.id} className='card-home'>
-                            <div classname="home-div">
+                        <div key={reports.id} className='card-home' onClick={handleData}>
+                            <div className="home-div">
                                <img src={reports.image_url} alt="avatar" className="home-image"/> 
                             </div>
                             <div className="home-content">
                             <h3>{reports.title}</h3>
-                        <p>{reports.message}</p>
+                        <p>{reports.message}...</p>
                         <p>{reports.report_status}</p>
                             </div>
 

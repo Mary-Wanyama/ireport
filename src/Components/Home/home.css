@@ -34,7 +34,8 @@
 }
 .home-image1{
     width: 100%; 
-    height: 30%;
+    height: 50vh;
+    /* width: auto; */
 }
 .home-row1{
 width: 80%;
