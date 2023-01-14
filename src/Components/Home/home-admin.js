@@ -48,7 +48,7 @@ function HomeAdmin() {
    return(
        <Fragment>
             <div className="post-div">
-            <h3>My Posts</h3> 
+            <h3>Admin</h3> 
             <Avatar />
             </div>
            <div>
