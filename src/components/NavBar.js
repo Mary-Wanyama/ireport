@@ -2,7 +2,7 @@ import React from "react";
 import "./Nav.css";
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import styled from "styled-components";
+// import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
@@ -17,10 +17,10 @@ const NavBar = () => {
         <h3>LOGO</h3>
       </div>
       <nav ref={navRef}>
-        <NavLink to="/"> Home </NavLink>
-        <NavLink to="/reports">Reports</NavLink>
+        {/*<NavLink to="/"> Home </NavLink>*/}
+        {/* <NavLink to="/reports">Reports</NavLink>*/}
         <NavLink to="/register">Reg/Login</NavLink>
-        <NavLink to="/contacts">Contacts</NavLink>
+        {/*<NavLink to="/contacts">Contacts</NavLink>*/}
 
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
