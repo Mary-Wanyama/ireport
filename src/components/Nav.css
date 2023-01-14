@@ -1,12 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Titillium Web", sans-serif;
-}
-
 :root {
   --mainColor: #295c36d7;
   --mainColorLight: #5767aa;
@@ -51,42 +42,4 @@ header div,
 nav {
   display: flex;
   align-items: center;
-}
-
-@media only screen and (max-width: 720px) {
-  header .nav-btn {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  header nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 25%;
-    padding-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1.5rem;
-    background-color: var(--mainColor);
-    transition: 1s;
-    transform: translateY(-100vh);
-  }
-
-  header .responsive_nav {
-    transform: none;
-  }
-
-  nav .nav-close-btn {
-    position: absolute;
-    top: 1.9rem;
-    right: 2rem;
-  }
-
-  nav a {
-    font-size: 1.5rem;
-  }
 }

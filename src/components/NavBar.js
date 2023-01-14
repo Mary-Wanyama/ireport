@@ -1,30 +1,17 @@
 import React from "react";
 import "./Nav.css";
-import { useRef } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-// import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-  const navRef = useRef();
-
-  const showNavbar = () => {
-    navRef.current.classList.toggle("responsive_nav");
-  };
   return (
     <header>
       <div>
         <h3>LOGO</h3>
       </div>
-      <nav ref={navRef}>
+      <nav>
         <NavLink to="/register">Reg/Login</NavLink>
-        <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-          <FaTimes />
-        </button>
+        <button className="nav-btn nav-close-btn" onClick={showNavbar}></button>
       </nav>
-      <button className="nav-btn" onClick={showNavbar}>
-        <FaBars />
-      </button>
     </header>
   );
 };
