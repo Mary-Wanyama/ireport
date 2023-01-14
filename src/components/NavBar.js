@@ -17,11 +17,7 @@ const NavBar = () => {
         <h3>LOGO</h3>
       </div>
       <nav ref={navRef}>
-        {/*<NavLink to="/"> Home </NavLink>*/}
-        {/* <NavLink to="/reports">Reports</NavLink>*/}
         <NavLink to="/register">Reg/Login</NavLink>
-        {/*<NavLink to="/contacts">Contacts</NavLink>*/}
-
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>
