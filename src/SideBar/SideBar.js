@@ -5,12 +5,14 @@ import {NavLink} from 'react-router-dom';
 function Sidebar() {
     return (
         <>
-            <div className="sidebar-list text-white w-40 bg-yellow-600 z-40 fixed h-full grid justify-items-center mb-4">
-                <div className='mt-7 mb-14'><img className="rounded-full h-28 w-28 mx-auto" src="https://w7.pngwing.com/pngs/632/307/png-transparent-paper-planes-send-newsletter-icon-blue-tinker-thumbnail.png" alt=""/></div>
+            <div className="sidebar-list text-white w-40 z-40 fixed h-full grid justify-items-center mb-4 shadow-2xl">
+                <div className='mt-3 mb-9 grid-flow-row-dense'><img className="rounded-full h-28 w-28 mx-auto" src="https://w7.pngwing.com/pngs/632/307/png-transparent-paper-planes-send-newsletter-icon-blue-tinker-thumbnail.png" alt=""/>
+                <h1 className='text-4xl mt-2 text-yellow-500 font-bold'>Chiriku</h1>
+                </div>
                 <div className='mb-1'>
                 {SidebarData.map((val, key)=>{
                         return(
-                            <div className='mb-8' key={key}>
+                            <div className='mb-6 hover:text-yellow-500' key={key}>
                                 <NavLink to={val.path}
                                 className="row"
                                 id={window.location.pathname === val.path ? "active" : ""}

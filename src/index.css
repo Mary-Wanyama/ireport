@@ -21,6 +21,9 @@ code {
 /* body {
   color:#007151;
 } */
+.sidebar-list {
+  background-color: #007151;
+}
 
 @tailwind base;
 @tailwind components;
