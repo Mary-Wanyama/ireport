@@ -1,7 +1,7 @@
 import React, {Fragment, useState, useEffect} from "react"; 
 import Avatar from "./avatar";
 
-function MyPosts() {
+function HomeAdmin() {
    const [data, setData] = useState([])
    const [name, setName] =useState('')
    const [image, setImage] = useState('')
@@ -48,7 +48,7 @@ function MyPosts() {
    return(
        <Fragment>
             <div className="post-div">
-            <h3>My Posts</h3> 
+            <h3>Admin</h3> 
             <Avatar />
             </div>
            <div>
@@ -115,4 +115,4 @@ function MyPosts() {
        </Fragment>
    )
 }
- export default MyPosts
+ export default HomeAdmin
