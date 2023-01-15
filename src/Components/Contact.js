@@ -1,5 +1,9 @@
 import React, { useRef } from 'react';
 import './Contact.css'
+import { HiOutlineMail } from 'react-icons/hi'
+import { RiPhoneFill, RiWhatsappLine } from 'react-icons/ri'
+// import { RiMessengerLine } from 'react-icons/ri'
+// import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const form = useRef();
@@ -25,18 +29,21 @@ const Contact = () => {
                 <div className='contact_container'>
                     <div className="contact_options">
                         <article className='contact_option'>
+                            <HiOutlineMail className='contact_icon' />
                             <h4>Email Address</h4>
                             <h5>ireporter@gmail.com</h5>
                             <a href="mailto:ireporter@gmail.com" target={'_blank'} rel="noreferrer">Send Message</a>
                         </article>
 
                         <article className='contact_option'>
+                            <RiPhoneFill className='contact_icon' />
                             <h4>Call Us</h4>
                             <h5>iReport</h5>
                             <a href="" target={'_blank'} rel="noreferrer">Send a message</a>
                         </article>
 
                         <article className='contact_option'>
+                            <RiWhatsappLine className='contact_icon' />
                             <h4>WhatsApp</h4>
                             <h5>Lets Talk</h5>
                             <a href="https://api.whatsapp.com/send?phone=+254" target={'_blank'} rel="noreferrer">Send Message</a>
