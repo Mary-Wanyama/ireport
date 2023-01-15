@@ -3,6 +3,8 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Profile from './Profile/profile';
 import NewReport from './NewReport/NewReport';
+import SideBar from './SideBar/SideBar';
+
 
 function App() {
   return (
@@ -10,7 +12,9 @@ function App() {
     <Routes>
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/newreport" element={<NewReport />} />
-      </Routes>
+          <Route exact path="/sidebar" element={<SideBar />} />
+    </Routes>
+      <SideBar/>
         {/* <Profile/> */}
         {/* <NewReport/> */}
     </div>

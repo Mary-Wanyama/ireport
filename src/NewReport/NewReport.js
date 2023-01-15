@@ -1,5 +1,8 @@
 import { useState } from "react"
 import React from 'react'
+import Sidebar from "../SideBar/SideBar";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {faHouseChimney} from '@fortawesome/free-solid-svg-icons';
 
 function NewReport() {
 

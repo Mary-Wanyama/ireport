@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Sidebar from '../SideBar/SideBar'
 
 function Profile() {
   return (
     <div className='bg-gray-200'>
+      <Sidebar/>
     <p className=' text-5xl text-green-700 font-bold py-9'>My Profile</p>
     <div className='grid justify-items-center ml-8 mb-4'>
         <div className="bg-slate-100 w-1/2 rounded-xl p-9 md:p-0 dark:bg-slate-900 shadow-2xl my-5">
