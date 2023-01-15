@@ -12,11 +12,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+.newreport-body {
+  background-color: grey;
+}
 .newreport-div {
   background-color: #007151;
 }
-body {
+/* body {
   color:#007151;
+} */
+.sidebar-list {
+  background-color: #007151;
 }
 
 @tailwind base;
