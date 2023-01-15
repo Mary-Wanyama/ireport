@@ -123,3 +123,28 @@ overflow-y: scroll;
     border: none;
     padding: 0.5vw;
 }
+
+.map-center{
+    background-color: red;
+    width: 4vw;
+    height: 4vw;
+   margin-left: 49%;
+}
+.map-button{
+    background-color: purple;
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    box-shadow: 0.1vh 0.1vh 0.9em yellow;
+    margin-top: 2vh;
+    aria-label: center back;
+}
+.map-box{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin-top: 0%;
+}
+.map.div{
+    
+}

@@ -1,96 +1,72 @@
-import { ChakraProvider, theme } from "@chakra-ui/react";
-import {
-  Box,
-  Flex,
-  HStack,
-  IconButton,
-} from "@chakra-ui/react";
-import { FaLocationArrow, FaTimes } from "react-icons/fa";
-import {
-  useJsApiLoader,
-  GoogleMap,
-  Marker,
-  DirectionsRenderer,
-} from "@react-google-maps/api";
-import React, { useRef, useState } from "react";
 
-const center = { lat: -1.286389, lng: 36.817223 }
+import { IconButton} from "@chakra-ui/react";
+import { FaLocationArrow, FaTimes } from "react-icons/fa";
+import {useJsApiLoader, GoogleMap, Marker,
+} from "@react-google-maps/api";
+import React, { useEffect, useState } from "react";
+
+
+const center = {lat: -3.943549, lng: 39.745274}
 
 function Maps() {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries: ["places"],
   });
-  console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-
+  // const marks = [{ lat: -1.286389, lng: 36.817223 }, {lat: -4.043740, lng: 39.658871}, {lat: -0.717178, lng: 36.431026}]
   const [map, setMap] = useState(/** @type google.maps.Map */ (null));
-  const [directionsResponse, setDirectionsResponse] = useState(null);
-  const [distance, setDistance] = useState("");
-  const [duration, setDuration] = useState("");
+  const url = "http://localhost:3000/alerts"
+  const [pointer, setPointers] = useState([])
 
-  /** @type React.MutableRefObject<HTMLInputElement> */
-  const originRef = useRef();
-
-  /** @type React.MutableRefObject<HTMLInputElement> */
-  const destinationRef = useRef();
+  useEffect(()=>{
+    fetch(url)
+    .then(res=>res.json())
+    .then(json =>{
+        setPointers(json) 
+    })
+}, [])
+  
   if (!isLoaded) {
     return "hello";
   }
 
-  async function calculateRoutes() {
-    console.log("hello there");
-    if (originRef.current.value === "" || destinationRef.current.value === "") {
-      return;
-    }
-    // eslint-disable-next-line no-undef
-    const directionsService = new google.maps.DirectionsService();
-    const results = await directionsService.route({
-      origin: originRef.current.value,
-      destination: destinationRef.current.value,
-      // eslint-disable-next-line no-undef
-      travelMode: google.maps.TravelMode.DRIVING,
-    });
-    setDirectionsResponse(results);
-    setDistance(results.routes[0].legs[0].distance.text);
-    setDuration(results.routes[0].legs[0].duration.text);
-  }
 
   return (
-    <ChakraProvider theme={theme}>
-      <Flex
+    <div>
+      <div
+      className="map-div"
         position="relative"
-        flexDirection="column"
-        alignItems="center"
+        display="flex"
+        flexdirection="column"
+        alignitems="center"
         bgColor="rgb(248, 240, 205)"
-        h="98vh"
-        w="100vw"
+        // h="98vh"
+        // w="100vw"
       >
-        <Box position="absolute" left={0} top={3} h="100%" w="100%">
+        <div className="map-box">
           <GoogleMap
             center={center}
             zoom={15}
             mapContainerStyle={{ width: "100%", height: "100%" }}
             onLoad={(map) => setMap(map)}
           >
-            <Marker position={center} />
+            {/* <Marker position={center} /> */}
 
-            {directionsResponse && (
-              <DirectionsRenderer directions={directionsResponse} />
-            )}
+            {pointer.map((mark, index) => <Marker key={index} position={{lat: mark.lat, lng: mark.lng}} />)}
+            <Marker position={center} />
           </GoogleMap>
-        </Box>
-          <HStack spacing={4} mt={4} justifyContent="space-between">
+        </div>
+          <div className="map-center">
             <IconButton
-              bgColor="white"
-              aria-label="center back"
+            className="map-button"
               icon={<FaLocationArrow />}
               isRound
               onClick={() => map.panTo(center)}
             />
-          </HStack>
+          </div>
 
-      </Flex>
-    </ChakraProvider>
+      </div>
+    </div>
   );
 }
 
