@@ -1,17 +1,15 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faHouseChimney} from '@fortawesome/free-solid-svg-icons';
+import {faHouseChimney, faRightFromBracket, faPhoneFlip, faLocationDot, faPlus} from '@fortawesome/free-solid-svg-icons';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
 
 
-
-
 export const SidebarData=[
-    // {
-    //     title: "Home",
-    //     path: "/home",
-    //     icon: <FaIcons.FaHome />,
-    //   },
+    {
+        title: "Home",
+        path: "/home",
+        icon: <FontAwesomeIcon icon={faHouseChimney} />,
+      },
       {
         title: "Profile",
         path: "/profile",
@@ -21,25 +19,25 @@ export const SidebarData=[
       {
         title: "New Report",
         path: "/newreport",
-        icon:<FontAwesomeIcon icon={faHouseChimney} />,
+        icon:<FontAwesomeIcon icon={faPlus} />,
       },
      
-    //   {
-    //     title: "Invitation",
-    //     path: "/studentinvitationform",
-    //     icon: <MdIcons.MdInsertInvitation />,
-    //   },
-    //   {
-    //     title: "Reviews",
-    //     path: "/reviews",
-    //     icon: <MdIcons.MdOutlineReviews />,
-    //   },
+      {
+        title: "Maps",
+        path: "/maps",
+        icon: <FontAwesomeIcon icon={faLocationDot} />,
+      },
+      {
+        title: "Contact Us",
+        path: "/contactus",
+        icon: <FontAwesomeIcon icon={faPhoneFlip} />,
+      },
   
-    //   {
-    //     title: "Logout",
-    //     path: "/",
-    //     icon: <MdIcons. MdLogout />,
-    //   },
+      {
+        title: "Logout",
+        path: "/logout",
+        icon: <FontAwesomeIcon icon={faRightFromBracket} />,
+      },
 ]
 
 

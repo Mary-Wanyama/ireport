@@ -14,7 +14,7 @@ function App() {
           <Route exact path="/newreport" element={<NewReport />} />
           <Route exact path="/sidebar" element={<SideBar />} />
     </Routes>
-      <SideBar/>
+      {/* <SideBar/> */}
         {/* <Profile/> */}
         {/* <NewReport/> */}
     </div>
