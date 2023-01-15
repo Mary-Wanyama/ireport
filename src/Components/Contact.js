@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import './Contact.css'
 
-
 const Contact = () => {
     const form = useRef();
 
@@ -25,6 +24,23 @@ const Contact = () => {
                 <h4 className='lorem'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ut voluptatum eveniet doloremque autem excepturi eaque, sit laboriosam voluptatem nisi delectus. Facere explicabo hic minus accusamus alias fuga nihil dolorum quae. Explicabo illo unde, odio consequatur ipsam possimus veritatis, placeat, ab molestiae velit inventore exercitationem consequuntur blanditiis omnis beatae. Dolor iste excepturi ratione soluta quas culpa voluptatum repudiandae harum non.</h4>
                 <div className='contact_container'>
                     <div className="contact_options">
+                        <article className='contact_option'>
+                            <h4>Email Address</h4>
+                            <h5>ireporter@gmail.com</h5>
+                            <a href="mailto:ireporter@gmail.com" target={'_blank'} rel="noreferrer">Send Message</a>
+                        </article>
+
+                        <article className='contact_option'>
+                            <h4>Call Us</h4>
+                            <h5>iReport</h5>
+                            <a href="" target={'_blank'} rel="noreferrer">Send a message</a>
+                        </article>
+
+                        <article className='contact_option'>
+                            <h4>WhatsApp</h4>
+                            <h5>Lets Talk</h5>
+                            <a href="https://api.whatsapp.com/send?phone=+254" target={'_blank'} rel="noreferrer">Send Message</a>
+                        </article>
                     </div>
 
                     <form className='contact_form' ref={form} onSubmit={sendEmail}>
