@@ -55,13 +55,13 @@ function NewReport() {
   {/* </figure> */}
   </div>
 <form className='w-96 place-self-center text-black' onSubmit={handleSaveReport}>
-      <label class="block mb-4">
+      <label class="block mb-1">
         <span class="block text-lg font-medium text-white text-center">Title</span>
-        <input type="text" value={formData.title} name="title" onChange={handleChange} class="my-1 block w-full px-3 py-1 bg-gray-300 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+        <input type="text" value={formData.title} name="title" onChange={handleChange} class="my-1 block w-full px-3 py-1 bg-gray-300 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 text-black
           focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"/>
       </label>
 
-      <label class="grid my-3">
+      <label class="grid my-1">
         {/* <span class="sr-only">Choose profile photo</span> */}
         <span class="block text-lg font-medium text-white text-center">File</span>
         <input value={formData.file} type="file" name="file" onChange={handleChange} class="block place-self-center my-1 w-full text-base text-black
@@ -73,19 +73,19 @@ function NewReport() {
         "/>
       </label>
 
-      <label class="block my-3">
+      <label class="block my-1">
         <span class="block text-lg font-medium text-white text-center">Address</span>
-        <input type="text" value={formData.address} name="address" onChange={handleChange} class="my-1 bg-gray-300 block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+        <input type="text" value={formData.address} name="address" onChange={handleChange} class="my-1 bg-gray-300 block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 text-black
           focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
         "/>
       </label>
 
-      <label className='grid my-3'>
+      <label className='grid my-1'>
       <span class="block text-lg text-center font-medium text-white">Describe your Complaint:</span>
-      <textarea value={formData.message} name="message" onChange={handleChange} className='rounded my-1 bg-gray-300 place-self-center' placeholder='Your message' cols="60" rows="6"> </textarea>
+      <textarea value={formData.message} name="message" onChange={handleChange} className='rounded my-1 bg-gray-300 text-black place-self-center' placeholder='Your message' cols="60" rows="6"> </textarea>
       </label>
 
-      <button class="flex-shrink-0 bg-gray-100 hover:bg-yellow-500  border-gray-100 hover:border-yellow-500 text-lg border-4 text-black py-1 px-4 rounded-md mb-11" type="submit">
+      <button class="flex-shrink-0 bg-gray-100 w-28 place-self-center hover:bg-yellow-500  border-gray-100 hover:border-yellow-500 text-lg border-4 text-black py-1 px-4 rounded-md mb-11" type="submit">
         Submit
       </button>
     </form>

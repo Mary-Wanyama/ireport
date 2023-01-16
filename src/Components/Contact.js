@@ -27,7 +27,7 @@ const Contact = () => {
             <Sidebar/>
             <section className='grid w-full' id="contact">
                 
-                <h2 className='text-green-800 font-bold text-5xl'>Contact Us</h2>
+                <h2 className='text-green-700 font-bold text-5xl'>Contact Us</h2>
                 <div className='w-96 my-6 place-self-center'>
                 <h4 className='lorem text-black'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ut voluptatum eveniet doloremque autem excepturi eaque, sit laboriosam voluptatem nisi delectus. Facere explicabo hic minus accusamus alias fuga nihil dolorum quae. </h4>
                 </div>
