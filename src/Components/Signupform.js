@@ -16,8 +16,8 @@ const Signupform = ({ toggleForm }) => {
   return (
     <div className="auth-form">
       <form className="register-form">
-        <label htmlFor="username">username</label>
-        <input
+        <label htmlFor="username" className="text-green-800 font-bold">Username</label>
+        <input className="text-green-800 font-bold"
           type="username"
           id="username"
           placeholder="username"
@@ -25,8 +25,8 @@ const Signupform = ({ toggleForm }) => {
           value={form.username}
           onChange={handleChange}
         />
-        <label htmlFor="email">emails</label>
-        <input
+        <label htmlFor="email" className="text-green-800 font-bold">Email</label>
+        <input className="text-black"
           type="email"
           id="emails"
           placeholder="email"
@@ -35,8 +35,8 @@ const Signupform = ({ toggleForm }) => {
           onChange={handleChange}
         />
 
-        <label htmlFor="password">Password</label>
-        <input
+        <label htmlFor="password" className="text-green-800 font-bold">Password</label>
+        <input className="text-black"
           type="password"
           id="password"
           placeholder="**********"
@@ -44,10 +44,10 @@ const Signupform = ({ toggleForm }) => {
           value={form.password}
           onChange={handleChange}
         />
-        <button className="btn">Sign-Up</button>
+        <button className="btn bg-green-800 hover:bg-yellow-500 hover:border-yellow-500 text-lg border-4 text-black py-1">Sign-Up</button>
       </form>
 
-      <button className="link btn" onClick={() => toggleForm("login")}>
+      <button className="link btn bg-green-800" onClick={() => toggleForm("login")}>
         Already have an account? Login here.
       </button>
     </div>

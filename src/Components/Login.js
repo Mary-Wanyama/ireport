@@ -13,10 +13,10 @@ const Login = ({ toggleForm }) => {
   };
   console.log(form);
   return (
-    <div className="auth-form">
+    <div className="auth-form text-black">
       <form className="login-form">
-        <label htmlFor="username">username</label>
-        <input
+        <label htmlFor="username" className="text-green-800 font-bold">Username</label>
+        <input className="text-black"
           type="username"
           id="username"
           placeholder="username"
@@ -24,8 +24,8 @@ const Login = ({ toggleForm }) => {
           value={form.username}
           onChange={handleChange}
         />
-        <label htmlFor="password">Password</label>
-        <input
+        <label htmlFor="password" className="text-green-800 font-bold">Password</label>
+        <input className="text-black"
           type="password"
           id="password"
           placeholder="**********"
@@ -33,9 +33,9 @@ const Login = ({ toggleForm }) => {
           value={form.password}
           onChange={handleChange}
         />
-        <button className="btn">login</button>
+        <button className="btn bg-green-800 hover:bg-yellow-500 hover:border-yellow-500 text-lg border-4 text-black py-1">Login</button>
       </form>
-      <button className="link btn" onClick={() => toggleForm("register")}>
+      <button className="link btn bg-green-800" onClick={() => toggleForm("register")}>
         Don't have an account? Register here.
       </button>
     </div>
