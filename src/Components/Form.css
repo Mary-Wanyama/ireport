@@ -1,6 +1,6 @@
-/* .reg {
+.reg {
   background-color: #007151;
-} */
+}
 .auth-form {
   display: flex;
   flex-direction: column;

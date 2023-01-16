@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import Sidebar from "../../SideBar/SideBar";
 import "./home.css"
 
 function Home(){
@@ -43,8 +44,9 @@ function Home(){
       }
     return(
         <Fragment>
-            <div>
-            <input value={search} onChange={handleChange}
+            <Sidebar/>
+            <div className="ml-20">
+            <input className="w-96" value={search} onChange={handleChange}
         type="text"
         placeholder="filter"
       />
@@ -92,7 +94,6 @@ function Home(){
  
         </div>
         
-
 
 
         </Fragment>

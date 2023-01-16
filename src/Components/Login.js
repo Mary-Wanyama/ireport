@@ -33,7 +33,7 @@ const Login = ({ toggleForm }) => {
           value={form.password}
           onChange={handleChange}
         />
-        <button className="btn bg-green-800 hover:bg-yellow-500 hover:border-yellow-500 text-lg border-4 text-black py-1">Login</button>
+        <button className="btn bg-green-800 text-lg border-4 text-black py-1">Login</button>
       </form>
       <button className="link btn bg-green-800" onClick={() => toggleForm("register")}>
         Don't have an account? Register here.
