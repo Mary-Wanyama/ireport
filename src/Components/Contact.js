@@ -24,27 +24,27 @@ const Contact = () => {
 
     return (
         <>
-            <Sidebar/>
+            <Sidebar />
             <section className='grid w-full' id="contact">
-                
+
                 <h2 className='text-green-700 font-bold text-5xl'>Contact Us</h2>
                 <div className='w-96 my-6 place-self-center'>
-                <h4 className='lorem text-black'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ut voluptatum eveniet doloremque autem excepturi eaque, sit laboriosam voluptatem nisi delectus. Facere explicabo hic minus accusamus alias fuga nihil dolorum quae. </h4>
+                    <h4 className='lorem text-black'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ut voluptatum eveniet doloremque autem excepturi eaque, sit laboriosam voluptatem nisi delectus. Facere explicabo hic minus accusamus alias fuga nihil dolorum quae. </h4>
                 </div>
                 <div className='contact_container'>
                     <div className="contact_options">
                         <article className='contact_option'>
                             <HiOutlineMail className='contact_icon' />
                             <h4>Email Address</h4>
-                            <h5>ireporter@gmail.com</h5>
+                            <h5>chiriku@gmail.com</h5>
                             <a href="mailto:ireporter@gmail.com" target={'_blank'} rel="noreferrer">Send Message</a>
                         </article>
 
                         <article className='contact_option'>
                             <RiPhoneFill className='contact_icon' />
                             <h4>Call Us</h4>
-                            <h5>iReport</h5>
-                            <a href="" target={'_blank'} rel="noreferrer">Send a message</a>
+                            <h5>+254 719872459</h5>
+                            <a href="" target={'_blank'} rel="noreferrer">Call</a>
                         </article>
 
                         <article className='contact_option'>
