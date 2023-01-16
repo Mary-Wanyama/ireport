@@ -1,7 +1,7 @@
 import React, {Fragment, useState, useEffect} from "react"; 
 import Avatar from "./avatar";
 
-function MyPosts() {
+function MyAlerts() {
    const [data, setData] = useState([])
    const [name, setName] =useState('')
    const [image, setImage] = useState('')
@@ -115,4 +115,4 @@ function MyPosts() {
        </Fragment>
    )
 }
- export default MyPosts
+ export default MyAlerts

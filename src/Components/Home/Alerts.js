@@ -1,8 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Sidebar from "../../SideBar/SideBar";
-import "./home.css"
 
-function Home(){
+function Alerts(){
     const [data, setData] = useState([])
     const [name, setName] =useState('')
     const [image, setImage] = useState('')
@@ -99,4 +98,4 @@ function Home(){
         </Fragment>
     )
 }
-    export default Home
+    export default Alerts
