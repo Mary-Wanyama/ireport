@@ -1,6 +1,6 @@
-.reg {
-  background-color: White;
-}
+/* .reg {
+  background-color: #007151;
+} */
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -9,16 +9,18 @@
   text-align: center;
   height: 70%;
   width: 500px;
-  margin: 10% auto;
+  margin: 3% auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border: 1px solid black;
   border-radius: 10px;
+  color: black;
 }
 .login-form,
 .register-form {
   display: flex;
   flex-direction: column;
   margin: 20px;
+  color: black;
 }
 label {
   text-align: left;
@@ -37,10 +39,11 @@ input {
   padding: 5px;
   margin: 10px;
   border-radius: 10px;
-  cursor: pointer;
+  /* cursor: pointer; */
+  color: #007151;
 }
 .link {
-  background: none;
-  color: rgb(22, 21, 21);
-  text-decoration: underline;
+  /* background: none; */
+  color: #007151;
+  text-decoration: none;
 }

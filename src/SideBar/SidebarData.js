@@ -7,7 +7,7 @@ import {faUser} from '@fortawesome/free-solid-svg-icons';
 export const SidebarData=[
     {
         title: "Home",
-        path: "/home",
+        path: "/",
         icon: <FontAwesomeIcon icon={faHouseChimney} />,
       },
       {
@@ -24,18 +24,18 @@ export const SidebarData=[
      
       {
         title: "Maps",
-        path: "/maps",
+        path: "/map",
         icon: <FontAwesomeIcon icon={faLocationDot} />,
       },
       {
         title: "Contact Us",
-        path: "/contactus",
+        path: "/contact",
         icon: <FontAwesomeIcon icon={faPhoneFlip} />,
       },
   
       {
         title: "Logout",
-        path: "/logout",
+        path: "/register",
         icon: <FontAwesomeIcon icon={faRightFromBracket} />,
       },
 ]
