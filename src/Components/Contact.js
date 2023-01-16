@@ -3,6 +3,7 @@ import './Contact.css'
 import { HiOutlineMail } from 'react-icons/hi'
 import { RiPhoneFill, RiWhatsappLine } from 'react-icons/ri'
 import Sidebar from '../SideBar/SideBar';
+import FAQ from './FAQ';
 // import { RiMessengerLine } from 'react-icons/ri'
 // import emailjs from '@emailjs/browser';
 
@@ -63,6 +64,7 @@ const Contact = () => {
                     </form>
                 </div>
             </section>
+            <FAQ />
         </>
     )
 }
