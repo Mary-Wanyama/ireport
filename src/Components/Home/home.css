@@ -130,6 +130,21 @@ overflow-y: scroll;
     height: 4vw;
    margin-left: 49%;
 }
+.center-map{
+    background-color: red;
+    width: 4vw;
+    height: 4vw;
+   margin-left: 40%;
+   margin-top: 70vh;
+}
+.button-map{
+    background-color: purple;
+    height: 20vh;
+    width: 15vw;
+    /* border-radius: 50%; */
+    box-shadow: 0.1vh 0.1vh 0.9em yellow;
+    margin-top: 2vh;
+}
 .map-button{
     background-color: purple;
     height: 3vw;
@@ -137,7 +152,7 @@ overflow-y: scroll;
     border-radius: 50%;
     box-shadow: 0.1vh 0.1vh 0.9em yellow;
     margin-top: 2vh;
-    aria-label: center back;
+    /* aria-label: center back; */
 }
 .map-box{
     height: 100%;
@@ -146,5 +161,9 @@ overflow-y: scroll;
     margin-top: 0%;
 }
 .map.div{
-    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(248, 240, 205);
 }

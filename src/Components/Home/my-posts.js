@@ -7,7 +7,7 @@ function MyPosts() {
    const [image, setImage] = useState('')
    const [message, setMessage] = useState('')
    const [identity, setIdentity] =useState(1)
-   const url = "http://localhost:3000/alerts"
+   const url = "https://report-production-8d93.up.railway.app/alerts"
    const urlpath = url + "/" + identity
    useEffect(()=>{
        fetch(url)

@@ -10,6 +10,7 @@ import Contact from "./Components/Contact";
 import Login from "./Components/Login";
 import Signupform from "./Components/Signupform";
 import HomeAdmin from "./Components/Home/home-admin";
+import NewAlert from "./NewReport/NewAlert";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/homeadmin" element={<HomeAdmin />} />
         <Route exact path="/signup" element={<Signupform />} />
+        <Route exact path="/newalert" element={<NewAlert />} />
       </Routes>
     </div>
   );
