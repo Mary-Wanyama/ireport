@@ -81,7 +81,7 @@ input, textarea{
 
 
 :root {
-  --color-bg: teal;
+  --color-bg: #007151;
   --color-bg-variant: #13144d;
   --color-primary: #f1f1f1;
   --color-primary-variant: rgba(77, 181, 255, 0.4);
@@ -127,12 +127,14 @@ h5{
 h2 {
   font-size: 2.5rem;
   font-family: 'Oleo Script', cursive;
-  color: teal;
+  color: #007151;
 }
 
 section, #contact {
-  margin-top: 3rem;
+  margin-top: 0rem;
   margin-bottom: 3rem;
+  padding-top: 3rem;
+  margin-left: 7rem;
 }
 
 section, #contact > h4 {
