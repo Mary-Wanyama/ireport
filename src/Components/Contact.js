@@ -25,10 +25,12 @@ const Contact = () => {
     return (
         <>
             <Sidebar/>
-            <section id="contact">
+            <section className='grid w-full' id="contact">
                 
-                <h2 className='text-yellow-400'>Contact Us</h2>
-                <h4 className='lorem'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ut voluptatum eveniet doloremque autem excepturi eaque, sit laboriosam voluptatem nisi delectus. Facere explicabo hic minus accusamus alias fuga nihil dolorum quae. Explicabo illo unde, odio consequatur ipsam possimus veritatis, placeat, ab molestiae velit inventore exercitationem consequuntur blanditiis omnis beatae. Dolor iste excepturi ratione soluta quas culpa voluptatum repudiandae harum non.</h4>
+                <h2 className='text-green-800 font-bold text-5xl'>Contact Us</h2>
+                <div className='w-96 my-6 place-self-center'>
+                <h4 className='lorem text-black'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ut voluptatum eveniet doloremque autem excepturi eaque, sit laboriosam voluptatem nisi delectus. Facere explicabo hic minus accusamus alias fuga nihil dolorum quae. </h4>
+                </div>
                 <div className='contact_container'>
                     <div className="contact_options">
                         <article className='contact_option'>
@@ -57,7 +59,7 @@ const Contact = () => {
                         <input type="text" name="name" placeholder="Your Full Name" required />
                         <input type="email" name="email" placeholder="Your Email" required />
                         <textarea name="message" rows="7" placeholder='Your Message' required />
-                        <button type="submit" className='btn btn-primary'>Send Message</button>
+                        <button type="submit" className='btn btn-primary '>Send Message</button>
                     </form>
                 </div>
             </section>
