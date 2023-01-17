@@ -16,7 +16,7 @@ const Login = ({ toggleForm }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://report-production-8d93.up.railway.app/login", {
+    fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const Login = ({ toggleForm }) => {
       if (data.ok) {
         data.json().then((user) => {
           setUser(user);
-          if (user.admin === true) {
+          if (user.role === true) {
             window.location.href = "/admin";
           } else {
             window.location.href = "/";

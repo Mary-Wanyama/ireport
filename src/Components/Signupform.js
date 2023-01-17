@@ -32,7 +32,7 @@ const Signupform = ({ toggleForm }) => {
     };
     console.log(newUser);
     // Send the new user object to the backend API for registration
-    fetch("https://report-production-8d93.up.railway.app/signup", {
+    fetch("http://localhost:3000/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
