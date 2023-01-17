@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import png from "../../../images/img.png"
 import "./about.css"
-
+ 
 
 const About = () => {
   return (
