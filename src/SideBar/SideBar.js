@@ -1,12 +1,15 @@
 import React from 'react'
 import {SidebarData} from './SidebarData';
 import {NavLink} from 'react-router-dom';
+import logo from '../Components/Chiriku-logo.png'
 
 function Sidebar() {
     return (
         <>
             <div className="sidebar-list text-white w-44 z-40 fixed h-full grid justify-items-center mb-4 shadow-2xl">
-                <div className='mt-3 mb-2 grid-flow-row-dense'><img className="rounded-full h-28 w-28 mx-auto" src="https://w7.pngwing.com/pngs/632/307/png-transparent-paper-planes-send-newsletter-icon-blue-tinker-thumbnail.png" alt=""/>
+                <div className='mt-3 mb-2 grid-flow-row-dense'>
+                <img className="rounded-full h-28 w-28 mx-auto" src={logo} alt=""/>
+                    {/* <img className="rounded-full h-28 w-28 mx-auto" src="https://w7.pngwing.com/pngs/632/307/png-transparent-paper-planes-send-newsletter-icon-blue-tinker-thumbnail.png" alt=""/> */}
                 <h1 className='text-4xl mt-2 text-yellow-400 font-bold'>Chiriku</h1>
                 </div>
                 <div className='mb-1 text-lg font-bold'>
