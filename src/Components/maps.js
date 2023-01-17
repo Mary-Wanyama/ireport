@@ -12,7 +12,7 @@ function Maps() {
     libraries: ["places"],
   });
   // const marks = [{ lat: -1.286389, lng: 36.817223 }, {lat: -4.043740, lng: 39.658871}, {lat: -0.717178, lng: 36.431026}]
-  // const [map, setMap] = useState(/** @type google.maps.Map */ (null));
+  const [map, setMap] = useState(/** @type google.maps.Map */ (null));
   const url = "https://report-production-8d93.up.railway.app/alerts"
   const [pointer, setPointers] = useState([])
 
