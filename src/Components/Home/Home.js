@@ -46,22 +46,22 @@ function Home(){
         <Fragment>
             <Sidebar/>
             <div className="ml-20">
-            <input className="w-96" value={search} onChange={handleChange}
+            <input className="w-96 text-green-800 font-bold" value={search} onChange={handleChange}
         type="text"
         placeholder="filter"
       />
       <div>
-      <div className="home-card">
+      <div className="home-card ml-20">
 
 <div className="home-row"> 
   <div>
   {data.map((reports)=>( 
           
           <div key={reports.id} className='card-home' onClick={()=>{ setIdentity(reports.id)}}>
-              <div className='home-div'>
+              <div className='home-div px-2'>
                   <img src={reports.image} alt="avatar"/>
               </div>
-              <div className="home-content">
+              <div className="home-content pt-2 pb-3">
                   <h2>{reports.title}</h2>
                   <p>{reports.message}</p>
               </div>
