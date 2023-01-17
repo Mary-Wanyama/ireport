@@ -11,16 +11,18 @@ import Login from "./Components/Login";
 import Signupform from "./Components/Signupform";
 import HomeAdmin from "./Components/Home/home-admin";
 import NewAlert from "./NewReport/NewAlert";
+import LandingPage from "./Components/landingpage/LandingPage";
 
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/profile" element={<Profile />} />
         <Route exact path="/newreport" element={<NewReport />} />
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
         <Route exact path="/myposts" element={<MyPosts />} />
         <Route exact path="/map" element={<Maps />} />
         <Route exact path="/contact" element={<Contact />} />
