@@ -16,7 +16,7 @@ const Login = ({ toggleForm }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/login", {
+    fetch("https://reporting-production.up.railway.app/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
