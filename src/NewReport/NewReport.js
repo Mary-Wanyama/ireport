@@ -15,7 +15,7 @@ function NewReport() {
   const handleSaveReport = async (e) => {
         e.preventDefault();
         console.log(formData);
-            const res = await fetch("https://my-json-server.typicode.com", {
+            const res = await fetch("https://report-production-8d93.up.railway.app/reveals", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -55,6 +55,20 @@ function NewReport() {
   {/* </figure> */}
   </div>
 <form className='w-96 place-self-center text-black' onSubmit={handleSaveReport}>
+ 
+      <label class="block mb-1">
+        <span class="block text-lg font-medium text-white text-center">Choose Category</span>
+      <div className="relative" >
+        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+          <option>Red Flag (An incident linked to corruption)</option>
+          <option>Intervention (A call for a government agency to intervene e.g repair bad road sections, collapsed bridges).</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center  text-gray-700">
+          <svg class="fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        </div>
+      </div>
+      </label>
+
       <label class="block mb-1">
         <span class="block text-lg font-medium text-white text-center">Title</span>
         <input type="text" value={formData.title} name="title" onChange={handleChange} class="my-1 block w-full px-3 py-1 bg-gray-300 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 text-black

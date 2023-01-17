@@ -25,7 +25,7 @@ function App() {
         <Route exact path="/map" element={<Maps />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/login" element={<Login />} />
-        <Route exact path="/homeadmin" element={<HomeAdmin />} />
+        <Route exact path="/admin" element={<HomeAdmin />} />
         <Route exact path="/signup" element={<Signupform />} />
         <Route exact path="/newalert" element={<NewAlert />} />
       </Routes>
