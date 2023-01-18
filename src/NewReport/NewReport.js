@@ -15,7 +15,7 @@ function NewReport() {
   const handleSaveReport = async (e) => {
         e.preventDefault();
         console.log(formData);
-            const res = await fetch("https://my-json-server.typicode.com", {
+            fetch("https://my-json-server.typicode.com", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

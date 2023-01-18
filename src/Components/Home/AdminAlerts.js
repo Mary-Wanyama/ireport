@@ -6,6 +6,7 @@ function MyAlerts() {
    const [name, setName] =useState('')
    const [image, setImage] = useState('')
    const [message, setMessage] = useState('')
+   const [change, setChange] = useState('')
    const [identity, setIdentity] =useState(1)
 //    const [address, setAddress] = useState([
 //     lat, 
@@ -24,8 +25,26 @@ function MyAlerts() {
        })
    }, [])
 
-   
+   const form = useRef();
+
+   const sendEmail = () => {
+    
+  
+    emailjs.sendForm(process.env.REACT_APP_EMAIL_KEY_ID,
+      process.env.REACT_APP_TEMPLATE_ID,
+      form.current,
+      process.env.REACT_APP_USER_ID)
+      .then((result) => {
+          console.log(result.text);
+          alert("message sent successfully")
+      }, (error) => {
+          console.log(error.text);
+      });
+      
+  };
  
+
+
    useEffect(()=>{
        fetch(urlpath)
        .then(res=>res.json())
@@ -33,20 +52,21 @@ function MyAlerts() {
            setName(json.title)
            setMessage(json.message)
            setImage(json.image)
+           setChange(json.status)
            
        })
    }, [ identity ])
    // console.log(data)
 
 
-   const [lat, setLat] = useState("")
-   const [lng, setLng] = useState("")
+   const [status, setStatus] = useState("")
+  
    function getpost() {
     fetch(urlpath).then((result) => {
       result.json().then((resp) => {
         // console.warn(resp)
-       setLat(resp.lat)
-       setLng(resp.lng)
+       setStatus(resp.status)
+       
       })
     })
   }
@@ -69,6 +89,7 @@ function MyAlerts() {
        result.json().then((resp) => {
          console.warn(resp)
          getpost()
+         sendEmail()
        })
      })
    }
@@ -134,19 +155,18 @@ function MyAlerts() {
      <div>
      <h4>{name}</h4>
      <p>{message}</p>
+     <em>{change}</em>
      </div>
      <button onClick={handleDelete}>Delete Post</button>
      
-     <div className="flex-alerts">
+     <div className="alerts">
         <div>
-            <h3>Latitude</h3>
-            <input type="number" value={lat} onChange={(e)=>{setLat(e.target.value)}}/>
-        </div>
-        <div>
-            <h3>longitude</h3>
-            <input type="number" value={lng} onChange={(e)=>{setLng(e.target.value)}} />
-            <button onClick={handleUpdate}>Update</button>
-                    </div>
+            <h3>Status</h3>
+            <input type="email" name="user_email" id='email' value={email}/>
+            <textarea name="message" id='title' value="The status update is successful"/>
+            <input type="number" value={Change} onChange={(e)=>{setStatus(e.target.value)}} />
+            <button ref={form} id="emailform" onClick={handleUpdate}>Update</button>
+             </div>
      </div>
      </div>
 

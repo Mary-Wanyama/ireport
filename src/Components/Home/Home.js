@@ -8,7 +8,7 @@ function Home(){
     const [image, setImage] = useState('')
     const [message, setMessage] = useState('')
     const [identity, setIdentity] =useState(1)
-    const url = "https://report-production-8d93.up.railway.app/alerts"
+    const url = "https://reporting-production.up.railway.app/reveals"
     const urlpath = url + "/" + identity
     useEffect(()=>{
         fetch(url)
@@ -24,9 +24,9 @@ function Home(){
         fetch(urlpath)
         .then(res=>res.json())
         .then(json =>{
-            setName(json.title)
-            setMessage(json.message)
-            setImage(json.image)
+            setName(json.report_title)
+            setMessage(json.report_message)
+            setImage(json.report_image)
             
         })
     }, [ identity ])
@@ -59,11 +59,11 @@ function Home(){
           
           <div key={reports.id} className='card-home' onClick={()=>{ setIdentity(reports.id)}}>
               <div className='home-div'>
-                  <img src={reports.image} alt="avatar"/>
+                  <img src={reports.report_image} alt="avatar"/>
               </div>
               <div className="home-content">
-                  <h2>{reports.title}</h2>
-                  <p>{reports.message}</p>
+                  <h2>{reports.report_title}</h2>
+                  <p>{reports.report_message}</p>
               </div>
           </div>
 
