@@ -11,9 +11,9 @@ import Login from "./Components/Login";
 import Signupform from "./Components/Signupform";
 import HomeAdmin from "./Components/Home/home-admin";
 import NewAlert from "./NewReport/NewAlert";
-import Alerts from "./Alerts";
+import Alerts from "./Components/Home/Alerts";
 import MyAlerts from "./Components/Home/MyAlerts";
-import NewAlert from "./NewReport/NewAlert";
+
 
 
 function App() {
