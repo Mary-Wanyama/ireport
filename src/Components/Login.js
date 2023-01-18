@@ -1,6 +1,7 @@
 import React from "react";
 import "./Form.css";
 import { useState } from "react";
+import Sidebar from "../SideBar/SideBar";
 
 const Login = ({ toggleForm }) => {
   const [form, setForm] = useState({
@@ -13,7 +14,10 @@ const Login = ({ toggleForm }) => {
   };
   console.log(form);
   return (
-    <div className="auth-form text-black">
+    <div>
+      <Sidebar />
+      <div className="auth-form text-black">
+      
       <form className="login-form">
         <label htmlFor="username" className="text-green-800 font-bold">Username</label>
         <input className="text-black"
@@ -39,6 +43,8 @@ const Login = ({ toggleForm }) => {
         Don't have an account? Register here.
       </button>
     </div>
+    </div>
+    
   );
 };
 
