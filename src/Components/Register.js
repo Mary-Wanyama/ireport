@@ -11,6 +11,8 @@ function Register() {
     setCurrentForm(formName);
   };
   return (
+    <div>
+      <Sidebar/>
     <div className="register text-black">
       <div className="reg h-59">
       <img className="rounded-full h-28 w-28 mx-auto" src={logo} alt=""/>
@@ -23,6 +25,8 @@ function Register() {
         <Signupform toggleForm={toggleForm} />
       )}
     </div>
+    </div>
+
   );
 }
 

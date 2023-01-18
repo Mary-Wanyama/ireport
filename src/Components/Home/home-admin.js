@@ -7,7 +7,7 @@ function HomeAdmin() {
    const [image, setImage] = useState('')
    const [message, setMessage] = useState('')
    const [identity, setIdentity] =useState(1)
-   const url = "https://reporting-production.up.railway.app/alerts"
+   const url = "https://reporting-production.up.railway.app/reveals"
    const urlpath = url + "/" + identity
    useEffect(()=>{
        fetch(url)
@@ -23,9 +23,9 @@ function HomeAdmin() {
        fetch(urlpath)
        .then(res=>res.json())
        .then(json =>{
-           setName(json.title)
-           setMessage(json.message)
-           setImage(json.image)
+           setName(json.report_title)
+           setMessage(json.report_message)
+           setImage(json.report_image)
            
        })
    }, [ identity ])
@@ -40,7 +40,7 @@ function HomeAdmin() {
      handleSearching(search)
    }
    function handleSearching(search){
-       setData(info=>info.filter(info=>info.title.includes(search)))
+       setData(info=>info.filter(info=>info.report_title.includes(search)))
      }
      function handleDelete(id) {
       setData(data.filter(dat=> id !== dat.id))
@@ -69,15 +69,15 @@ function HomeAdmin() {
          
          <div key={reports.id} className='card-home' onClick={()=>{ setIdentity(reports.id)}}>
              <div className='home-div'>
-                 <img src={reports.image} alt="avatar"/>
+                 <img src={reports.report_image} alt="avatar"/>
              </div>
              <div className="home-content">
-                 <h2>{reports.title}</h2>
-                 <p>{reports.message}</p>
+                 <h2>{reports.report_title}</h2>
+                 <p>{reports.report_message}</p>
                  <button onClick={(e)=>{
                   e.stopPropagation()
                   handleDelete(reports.id)
-                 }}>Delete</button>
+                 }} className="home-btn">Delete</button>
              </div>
          </div>
 
@@ -94,7 +94,7 @@ function HomeAdmin() {
      <h4>{name}</h4>
      <p>{message}</p>
      </div>
-     <button onClick={handleDelete}>Delete Post</button>
+     <button className="home-btn" onClick={handleDelete}>Delete Post</button>
      </div>
 
 

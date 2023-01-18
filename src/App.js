@@ -11,7 +11,10 @@ import Login from "./Components/Login";
 import Signupform from "./Components/Signupform";
 import HomeAdmin from "./Components/Home/home-admin";
 import NewAlert from "./NewReport/NewAlert";
-import LandingPage from "./Components/landingpage/LandingPage";
+import LandingPage from "./Components/Landingpage/LandingPage";
+import Alerts from "./Components/Home/Alerts";
+import MyAlerts from "./Components/Home/MyAlerts";
+
 
 
 function App() {
@@ -30,6 +33,8 @@ function App() {
         <Route exact path="/admin" element={<HomeAdmin />} />
         <Route exact path="/signup" element={<Signupform />} />
         <Route exact path="/newalert" element={<NewAlert />} />
+        <Route exact path="/alert" element={<Alerts />} />
+        <Route exact path="/myalert" element={<MyAlerts />} />
       </Routes>
     </div>
   );
