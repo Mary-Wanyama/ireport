@@ -1,7 +1,6 @@
 import React from "react";
 import "./Form.css";
 import { useState } from "react";
-import Sidebar from "../SideBar/SideBar";
 
 const Login = ({ toggleForm }) => {
   const [form, setForm] = useState({
@@ -15,7 +14,7 @@ const Login = ({ toggleForm }) => {
   console.log(form);
   return (
     <div>
-      <Sidebar />
+      
       <div className="auth-form text-black">
       
       <form className="login-form">
