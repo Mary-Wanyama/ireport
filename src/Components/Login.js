@@ -26,10 +26,10 @@ const Login = ({ toggleForm }) => {
       if (data.ok) {
         data.json().then((user) => {
           setUser(user);
-          if (user.role === true) {
+          if (user.role === false) {
             window.location.href = "/admin";
           } else {
-            window.location.href = "/";
+            window.location.href = "/home";
           }
         });
       }else {

@@ -6,35 +6,40 @@ function NewReport() {
 
   const [formData,setFormData]=useState([{
     title:"",
-    file: "",
-    address: "",
+    // category:"",
+    // evidence: "",
+    // address: "",
     message:"",
+    user_id: "",
   }])
 
 
   const handleSaveReport = async (e) => {
         e.preventDefault();
         console.log(formData);
-            const res = await fetch("https://report-production-8d93.up.railway.app/reveals", {
+            const res = await fetch("https://reporting-production.up.railway.app/alerts", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                     title: formData.title,
-                    file: formData.file,
-                    address: formData.address,
+                    // category: formData.category,
+                    // evidence: formData.file,
+                    // address: formData.address,
                     message: formData.message,
+                    user_id: 1,
                 }),
             });
-            // const response = await res.json();
+            const response = await res.json();
             // handleNewReport(response);
-            // setFormData([{
-            //   title:"",
-            //   file: "",
-            //   address: "",
-            //   message:"",
-            // }]);
+            setFormData([{
+              title:"",
+              // file: "",
+              // address: "",
+              message:"",
+              user_id: 1,
+            }]);
     };
 
   function handleChange(e){
@@ -77,8 +82,8 @@ function NewReport() {
 
       <label class="grid my-1">
         {/* <span class="sr-only">Choose profile photo</span> */}
-        <span class="block text-lg font-medium text-white text-center">File</span>
-        <input value={formData.file} type="file" name="file" onChange={handleChange} class="block place-self-center my-1 w-full text-base text-black
+        <span class="block text-lg font-medium text-white text-center">Evidence</span>
+        <input value={formData.evidence} type="file" name="file" onChange={handleChange} class="block place-self-center my-1 w-full text-base text-black
           file:mr-4 file:py-2 file:px-4
           file:rounded-full file:border-0
           file:text-sm file:font-semibold

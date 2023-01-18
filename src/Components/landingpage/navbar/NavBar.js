@@ -17,14 +17,14 @@ function NavBar() {
         <>
             <Navbar expand="lg" className="home bg-green-800 navbar navbar-expand-lg navbar-light fixed-top py-3">
                 <Container className="container px-4 px-lg-5">
-                    <Navbar.Brand className='brand' href="#home">
+                    <Navbar.Brand className='brand' href="/home">
                     <img className="rounded-full h-24 w-24 mx-auto" src={logo} alt=""/>
                         <span className="navbar-brand text-wh text-white">CHIRIKU App</span>
                     </Navbar.Brand>
                     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
                         <Nav className="navbar-nav ms-auto my-2 my-lg-2 me-lg-4">
                             <ul className="navbar-nav ms-auto my-2 my-lg-0">
-                                <li><Nav.Link href="#home" className="text-gray-200">Home</Nav.Link></li>
+                                <li><Nav.Link href="/home" className="text-gray-200">Home</Nav.Link></li>
                                 <li><Nav.Link href="#about" className="text-gray-200">About Us</Nav.Link></li>
                                 <li><Nav.Link href="#services" className="text-gray-200">Services</Nav.Link></li>
                                 <li><Nav.Link href="#contact" className="text-gray-200">Contact Us</Nav.Link></li>
