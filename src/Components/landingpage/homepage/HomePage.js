@@ -12,8 +12,8 @@ function HomePage() {
                 <Container>
                     <Row>
                         <Col md={6} className="home-content">
-                            <h1 className="home-title">
-                                Chiriku App
+                            <h1 className="home-title text-blue-900">
+                                Chiriku
                             </h1>
                             <p className="home-text">
                                 Chiriku App enables any and every citizen to bring any form of corruption to the notice of appropriate authorities and the general public. Users can also report on things that needs government intervention. Our country must develop novel and localised solutions that will curb this menace, hence the birth of Chiriku App.

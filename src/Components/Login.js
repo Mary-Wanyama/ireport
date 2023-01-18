@@ -67,7 +67,7 @@ const Login = ({ toggleForm }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="btn bg-green-800 text-lg border-4 text-black py-1">Login</button>
+        <button className="btn bg-green-800 text-lg border-4 text-white py-1 hover:text-black">Login</button>
       </form>
       <button className="link btn bg-green-800" onClick={() => toggleForm("register")}>
         Don't have an account? Register here.

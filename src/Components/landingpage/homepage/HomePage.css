@@ -10,12 +10,17 @@
     text-align: center;
     
 }
-
+.btn-primary {
+    font-weight: bold;
+    background-color: rgb(2, 110, 2);
+    color: white;
+}
 .home-text{
     text-align: left;
     line-height: 2;
     font-size: 17px;
-    margin-top: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     /* width: 80%; */
 }
 

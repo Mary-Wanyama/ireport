@@ -4,7 +4,7 @@ import Sidebar from "../SideBar/SideBar";
 import Axios  from "axios";
 
 function NewAlert() {
-    const url = "https://report-production-8d93.up.railway.app/alerts"
+    const url = "https://reporting-production.up.railway.app/alerts"
   const [data, setData]=useState([{
     title:"",
     image: "",

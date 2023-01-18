@@ -19,7 +19,7 @@ function NavBar() {
                 <Container className="container px-4 px-lg-5">
                     <Navbar.Brand className='brand' href="/home">
                     <img className="rounded-full h-24 w-24 mx-auto" src={logo} alt=""/>
-                        <span className="navbar-brand text-wh text-white">CHIRIKU App</span>
+                        <span className="navbar-brand text-wh text-white">Chiriku</span>
                     </Navbar.Brand>
                     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
                         <Nav className="navbar-nav ms-auto my-2 my-lg-2 me-lg-4">
@@ -39,7 +39,7 @@ function NavBar() {
                                 position='top left'
                             >
                                 {/* <Button className=' bg-slate-300' variant="primary" onClick={() => navigate('/register')}>Log In</Button> */}
-                                <button onClick={() => navigate('/register')} className="nav-btn bg-yellow-400 text-lg border-4 text-white py-1">Login</button>
+                                <button onClick={() => navigate('/register')} className="nav-btn bg-yellow-500 text-lg border-4 text-white py-1">Login</button>
                             </div>
                         </Nav>
                     </Navbar.Collapse>
