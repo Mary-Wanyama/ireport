@@ -1,11 +1,7 @@
 import React from "react";
 import { Container, Navbar, Nav, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-// import logo from "../../../assets/images/logo/afyanet.png";
 import "./NavBar.css"
-// import Popup from "reactjs-popup";
-// import "reactjs-popup/dist/index.css";
-// import './LogInPopup.css'
 
 
 function NavBar() {

@@ -11,7 +11,7 @@ import Login from "./Components/Login";
 import Signupform from "./Components/Signupform";
 import HomeAdmin from "./Components/Home/home-admin";
 import NewAlert from "./NewReport/NewAlert";
-import LandingPage from "./Components/landingpage/LandingPage";
+import LandingPage from "./Components/Landingpage/LandingPage";
 import Alerts from "./Components/Home/Alerts";
 import MyAlerts from "./Components/Home/MyAlerts";
 
