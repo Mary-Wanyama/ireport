@@ -24,8 +24,8 @@ function MyPosts() {
        .then(res=>res.json())
        .then(json =>{
            setName(json.title)
-           setMessage(json.message)
-           setImage(json.image)
+           setMessage(json.report_message)
+           setImage(json.report_image)
            
        })
    }, [ identity ])
@@ -40,7 +40,7 @@ function MyPosts() {
      handleSearching(search)
    }
    function handleSearching(search){
-       setData(info=>info.filter(info=>info.title.includes(search)))
+       setData(info=>info.filter(info=>info.report_title.includes(search)))
      }
      function handleDelete(id) {
       setData(data.filter(dat=> id !== dat.id))
@@ -72,8 +72,8 @@ function MyPosts() {
                  <img src={reports.image} alt="avatar"/>
              </div>
              <div className="home-content">
-                 <h2>{reports.title}</h2>
-                 <p>{reports.message}</p>
+                 <h2>{reports.report_title}</h2>
+                 <p>{reports.report_message}</p>
                  <button onClick={(e)=>{
                   e.stopPropagation()
                   handleDelete(reports.id)

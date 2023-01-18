@@ -155,6 +155,7 @@ function MyAlerts() {
      <div>
      <h4>{name}</h4>
      <p>{message}</p>
+     <em>{change}</em>
      </div>
      <button onClick={handleDelete}>Delete Post</button>
      
