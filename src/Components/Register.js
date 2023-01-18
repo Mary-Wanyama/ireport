@@ -14,7 +14,7 @@ function Register() {
     <div className="register text-black">
       <div className="reg h-59">
       <img className="rounded-full h-28 w-28 mx-auto" src={logo} alt=""/>
-        <a href="/"><h1 className='text-5xl pt-2 font-bold text-yellow-400'>Chiriku App</h1></a>
+        <a href="/home"><h1 className='text-5xl pt-2 font-bold text-yellow-400'>Chiriku App</h1></a>
         <h2 className='text-2xl py-2 text-white'>Speak Out Against Corruption</h2>
       </div>
       {currentForm === "login" ? (
