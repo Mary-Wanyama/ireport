@@ -139,7 +139,7 @@ function MyAlerts() {
                  <button onClick={(e)=>{
                   e.stopPropagation()
                   handleDelete(reports.id)
-                 }}>Delete</button>
+                 }} className="home-btn">Delete</button>
              </div>
          </div>
 
@@ -157,7 +157,7 @@ function MyAlerts() {
      <p>{message}</p>
      <em>{change}</em>
      </div>
-     <button onClick={handleDelete}>Delete Post</button>
+     <button onClick={handleDelete} className="home-btn">Delete Post</button>
      
      <div className="alerts">
         <div>
@@ -165,7 +165,7 @@ function MyAlerts() {
             <input type="email" name="user_email" id='email' value={email}/>
             <textarea name="message" id='title' value="The status update is successful"/>
             <input type="number" value={Change} onChange={(e)=>{setStatus(e.target.value)}} />
-            <button ref={form} id="emailform" onClick={handleUpdate}>Update</button>
+            <button ref={form} id="emailform" onClick={handleUpdate} className="home-btn">Update</button>
              </div>
      </div>
      </div>

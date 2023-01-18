@@ -118,7 +118,7 @@ function MyAlerts() {
                  <button onClick={(e)=>{
                   e.stopPropagation()
                   handleDelete(reports.id)
-                 }}>Delete</button>
+                 }} className="home-btn">Delete</button>
              </div>
          </div>
 
@@ -135,7 +135,7 @@ function MyAlerts() {
      <h4>{name}</h4>
      <p>{message}</p>
      </div>
-     <button onClick={handleDelete}>Delete Post</button>
+     <button onClick={handleDelete} className="home-btn">Delete Post</button>
      
      <div className="flex-alerts">
         <div>
@@ -145,7 +145,7 @@ function MyAlerts() {
         <div>
             <h3>longitude</h3>
             <input type="number" value={lng} onChange={(e)=>{setLng(e.target.value)}} />
-            <button onClick={handleUpdate}>Update</button>
+            <button onClick={handleUpdate} className="home-btn">Update</button>
                     </div>
      </div>
      </div>

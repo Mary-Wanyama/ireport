@@ -77,7 +77,7 @@ function MyPosts() {
                  <button onClick={(e)=>{
                   e.stopPropagation()
                   handleDelete(reports.id)
-                 }}>Delete</button>
+                 }} className="home-btn">Delete</button>
              </div>
          </div>
 
@@ -94,7 +94,7 @@ function MyPosts() {
      <h4>{name}</h4>
      <p>{message}</p>
      </div>
-     <button onClick={handleDelete}>Delete Post</button>
+     <button onClick={handleDelete} className="home-btn">Delete Post</button>
      </div>
 
 

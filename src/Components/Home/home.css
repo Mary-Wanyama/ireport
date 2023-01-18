@@ -177,7 +177,7 @@ overflow-y: scroll;
     justify-content: space-between;
     /* align-items: center; */
 }
-button{
+.home-btn{
     background-color: green;
     padding: 1vh;
     border-radius: 1em;

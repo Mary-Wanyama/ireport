@@ -77,7 +77,7 @@ function HomeAdmin() {
                  <button onClick={(e)=>{
                   e.stopPropagation()
                   handleDelete(reports.id)
-                 }}>Delete</button>
+                 }} className="home-btn">Delete</button>
              </div>
          </div>
 
@@ -94,7 +94,7 @@ function HomeAdmin() {
      <h4>{name}</h4>
      <p>{message}</p>
      </div>
-     <button onClick={handleDelete}>Delete Post</button>
+     <button className="home-btn" onClick={handleDelete}>Delete Post</button>
      </div>
 
 
