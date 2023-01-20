@@ -1,15 +1,15 @@
 import React from 'react'
-import Services from './myservices/Services'
-import Footer from './footer/Footer'
-import About from './about/About'
-import NavBar from './navbar/NavBar'
-import HomePage from './homepage/HomePage'
+import Services from './myServices/Services'
+import Footer from './Footer/Footer'
+import About from './About/About'
+import NavBar from './Navbar/NavBar'
+import HomePage from './Homepage/HomePage'
 
 function LandingPage() {
   return (
     <div>
-      <NavBar/>
-      <HomePage/>
+      <NavBar />
+      <HomePage />
       <About />
       <Services />
       <Footer />

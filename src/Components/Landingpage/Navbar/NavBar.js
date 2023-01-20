@@ -1,12 +1,8 @@
 import React from "react";
-import { Container, Navbar, Nav} from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-// import logo from "../../../assets/images/logo/afyanet.png";
 import "./NavBar.css"
-import logo from '../homepage/Chiriku-logo.png'
-// import Popup from "reactjs-popup";
-// import "reactjs-popup/dist/index.css";
-// import './LogInPopup.css'
+import logo from '../Homepage/Chiriku-logo.png'
 
 
 function NavBar() {
@@ -18,7 +14,7 @@ function NavBar() {
             <Navbar expand="lg" className="home bg-green-800 navbar navbar-expand-lg navbar-light fixed-top py-3">
                 <Container className="container px-4 px-lg-5">
                     <Navbar.Brand className='brand' href="/home">
-                    <img className="rounded-full h-24 w-24 mx-auto" src={logo} alt=""/>
+                        <img className="rounded-full h-24 w-24 mx-auto" src={logo} alt="" />
                         <span className="navbar-brand text-wh text-white">Chiriku</span>
                     </Navbar.Brand>
                     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
