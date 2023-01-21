@@ -68,6 +68,12 @@ function MyAlerts() {
     .then(response => console.log(response))
    }
 
+   function addData() {
+    if(status=== "Null"){
+      handleUpdate()
+    }
+   }
+
   
    
 
@@ -143,7 +149,7 @@ function MyAlerts() {
         <div>
             <h3>longitude</h3>
             <input type="number" value={lng} onChange={(e)=>{setLongitude(e.target.value)}} />
-            <button onClick={()=>{  if({status} = "null"){{handleUpdate}}}} className="home-btn">Update</button>
+            <button onClick={addData} className="home-btn">Update</button>
                     </div>
      </div>
      </div>
