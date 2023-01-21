@@ -10,14 +10,16 @@ const Signupform = ({ toggleForm }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [avatar, setAvatar] = useState("");
 
   // Flag to indicate if the user has successfully registered
   const [registered, setRegistered] = useState(false);
 
   // Register the user using the provided username, email, and password
-  const handleRegister = () => {
+  const handleRegister = (e) => {
+    // e.preventDefault();
     // Validate the provided values
-    if (!username || !email || !password) {
+    if (!username || !email || !password || !avatar) {
       toast.error("Please enter a valid username, email, and password.", {
         position: "top-center",
       });
@@ -29,10 +31,11 @@ const Signupform = ({ toggleForm }) => {
       username,
       email,
       password,
+      avatar,
     };
     console.log(newUser);
     // Send the new user object to the backend API for registration
-    fetch("https://reporting-production.up.railway.app/signup", {
+    fetch("http://localhost:3000/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -92,6 +95,18 @@ const Signupform = ({ toggleForm }) => {
           name="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
+          // value={form.email}
+          // onChange={handleChange}
+        />
+
+        <label htmlFor="avatar" className="text-green-800 font-bold">Profile Picture</label>
+        <input className="text-black file:rounded file:bg-green-800 file:text-white"
+          type="file"
+          id="avatar"
+          // placeholder="email"
+          name="avatar"
+          value={avatar}
+          onChange={(event) => setAvatar(event.target.value)}
           // value={form.email}
           // onChange={handleChange}
         />
