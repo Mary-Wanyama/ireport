@@ -184,3 +184,8 @@ overflow-y: scroll;
     margin-right: 0%;
     box-shadow: 0.1vw 0.1vw 0.9em rgb(102, 102, 5);
 }
+.emailus{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}

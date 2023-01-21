@@ -25,7 +25,7 @@ function MyAlerts() {
    }, [])
 
    
- 
+  const [status, setStatus] = useState('')
    useEffect(()=>{
        fetch(urlpath)
        .then(res=>res.json())
@@ -33,6 +33,7 @@ function MyAlerts() {
            setName(json.title)
            setMessage(json.message)
            setImage(json.image)
+           setStatus(json.status)
            
        })
    }, [ identity ])
@@ -52,26 +53,22 @@ function MyAlerts() {
   }
 
 
+  const [latitude, setLatitude] = useState('')
+  const [longitude, setLongitude] = useState('')
 
-
-   function handleUpdate()
-   {
-     let item={lat, lng}
-     console.warn("item",item)
-     fetch(urlpath, {
-       method: 'PUT',
-       headers:{
-         'Accept':'application/json',
-         'Content-Type':'application/json'
-       },
-       body:JSON.stringify(item)
-     }).then((result) => {
-       result.json().then((resp) => {
-         console.warn(resp)
-         getpost()
-       })
-     })
+   function handleUpdate(){
+    fetch(urlpath, {
+      method: 'PUT',
+      headers: {"Content-Type": "application/json"}, 
+      body: JSON.stringify({
+        lat: parseFloat(latitude),
+        lng: parseFloat(longitude)
+      })
+    })
+    .then(response => console.log(response))
    }
+
+  
    
 
    const [search, setSearch] = useState("") //controll the form
@@ -134,18 +131,19 @@ function MyAlerts() {
      <div>
      <h4>{name}</h4>
      <p>{message}</p>
+     
      </div>
      <button onClick={handleDelete} className="home-btn">Delete Post</button>
      
      <div className="flex-alerts">
         <div>
             <h3>Latitude</h3>
-            <input type="number" value={lat} onChange={(e)=>{setLat(e.target.value)}}/>
+            <input type="number" value={lat} onChange={(e)=>{setLatitude(e.target.value)}}/>
         </div>
         <div>
             <h3>longitude</h3>
-            <input type="number" value={lng} onChange={(e)=>{setLng(e.target.value)}} />
-            <button onClick={handleUpdate} className="home-btn">Update</button>
+            <input type="number" value={lng} onChange={(e)=>{setLongitude(e.target.value)}} />
+            <button onClick={()=>{  if({status} = "null"){{handleUpdate}}}} className="home-btn">Update</button>
                     </div>
      </div>
      </div>

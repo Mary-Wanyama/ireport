@@ -14,6 +14,8 @@ import NewAlert from "./NewReport/NewAlert";
 import LandingPage from "./Components/Landingpage/LandingPage";
 import Alerts from "./Components/Home/Alerts";
 import MyAlerts from "./Components/Home/MyAlerts";
+import AdminAlerts from "./Components/Home/AdminAlerts";
+import Email from "./Components/Home/email";
 
 
 
@@ -34,7 +36,10 @@ function App() {
         <Route exact path="/signup" element={<Signupform />} />
         <Route exact path="/newalert" element={<NewAlert />} />
         <Route exact path="/alert" element={<Alerts />} />
-        <Route exact path="/myalert" element={<MyAlerts />} />
+        <Route exact path="/myalerts" element={<MyAlerts />} />
+        <Route exact path="/adminalerts" element={<AdminAlerts />} />
+        <Route exact path="/homeadmin" element={<HomeAdmin />} />
+        <Route exact path="/email" element={<Email/>}/>
       </Routes>
     </div>
   );

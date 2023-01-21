@@ -1,13 +1,15 @@
-import React, {Fragment, useState, useEffect} from "react"; 
+import React, {Fragment, useState, useEffect, useRef} from "react"; 
 import Avatar from "./avatar";
+import emailjs from "@emailjs/browser"
 
-function MyAlerts() {
+function AdminAlerts() {
    const [data, setData] = useState([])
    const [name, setName] =useState('')
    const [image, setImage] = useState('')
    const [message, setMessage] = useState('')
    const [change, setChange] = useState('')
    const [identity, setIdentity] =useState(1)
+   const [email, setEmail] = useState()
 //    const [address, setAddress] = useState([
 //     lat, 
 //     lon
@@ -43,7 +45,7 @@ function MyAlerts() {
       
   };
  
-
+const [status, setStatus] = useState('')
 
    useEffect(()=>{
        fetch(urlpath)
@@ -52,48 +54,30 @@ function MyAlerts() {
            setName(json.title)
            setMessage(json.message)
            setImage(json.image)
-           setChange(json.status)
-           
+           setStatus(json.status)
+           setEmail(json.email)
        })
    }, [ identity ])
    // console.log(data)
 
-
-   const [status, setStatus] = useState("")
-  
-   function getpost() {
-    fetch(urlpath).then((result) => {
-      result.json().then((resp) => {
-        // console.warn(resp)
-       setStatus(resp.status)
-       
+   
+   function handleUpdate(e){
+    e.preventDefault();
+    fetch(urlpath, {
+      method: 'PATCH',
+      headers: { "content-type": "application/json" 
+                
+    },
+      body: JSON.stringify({
+        status: change 
+      })
+      .then(res => {
+        console.log(res)
       })
     })
+    sendEmail()
+    e.reset()
   }
-
-
-
-
-   function handleUpdate()
-   {
-     let item={lat, lng}
-     console.warn("item",item)
-     fetch(urlpath, {
-       method: 'PUT',
-       headers:{
-         'Accept':'application/json',
-         'Content-Type':'application/json'
-       },
-       body:JSON.stringify(item)
-     }).then((result) => {
-       result.json().then((resp) => {
-         console.warn(resp)
-         getpost()
-         sendEmail()
-       })
-     })
-   }
-   
 
    const [search, setSearch] = useState("") //controll the form
 
@@ -155,18 +139,21 @@ function MyAlerts() {
      <div>
      <h4>{name}</h4>
      <p>{message}</p>
-     <em>{change}</em>
+     <em>{status}</em>
      </div>
      <button onClick={handleDelete} className="home-btn">Delete Post</button>
      
      <div className="alerts">
         <div>
             <h3>Status</h3>
-            <input type="email" name="user_email" id='email' value={email}/>
+
+            <input type="email" name="user_email" id='email' onchange={setEmail} value={email}/>
             <textarea name="message" id='title' value="The status update is successful"/>
-            <input type="number" value={Change} onChange={(e)=>{setStatus(e.target.value)}} />
-            <button ref={form} id="emailform" onClick={handleUpdate} className="home-btn">Update</button>
-             </div>
+            <input type="text" onBlur={(e)=>{setChange(e.target.value)}} />
+            <button ref={form} id="emailform"  onClick={handleUpdate} className="home-btn">Update</button>
+
+
+          </div>
      </div>
      </div>
 
@@ -188,4 +175,4 @@ function MyAlerts() {
        </Fragment>
    )
 }
- export default MyAlerts
+ export default AdminAlerts
