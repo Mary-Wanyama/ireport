@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Chiriku
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Chiriku App enables any and every citizen to bring any form of corruption to the notice of appropriate authorities and the general public. Users can also report on things that needs government intervention. Our country must develop novel and localised solutions that will curb this menace, hence the birth of Chiriku App.
 
-## Available Scripts
+## Table of content
 
-In the project directory, you can run:
+- [Link to sites](#link-to-site)
+- [Features](#features)
+- [Get Started](#getting-started)
+- [Installations](#installation-and-set-up)
+- [Technology Used](#technology-used)
+- [Authors](#authors)
+- [License](#license)
 
-### `npm start`
+### **Link to site**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- <a href=""> Chiriku</a>
+- <a href=""> Chiriku API</a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Report discovery: Search for reports that have been posted.
+- Report creation: Create and manage your own reports.
+- REport management: Edit and delete your reports.
+- Update account information: Update personal information and change account settings.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting started
 
-### `npm run build`
+- Sign up for an account on Chiriku.
+- Search for reports in your area by using the filter bar on the homepage.
+- If you want to create a repert, click on the "New Report" button on the sidebar.
+- Fill out the report details and click "Submit".
+  Support
+- If you have any questions or issues with Chiriku, please contact our support team at support@chiriku.com.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation And Set-up
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+git clone git@github.com:Mary-Wanyama/ireport.git
+```
 
-### `npm run eject`
+Install dependecies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **_Technology Used_**
 
-## Learn More
+- **main:** _react.js, ruby on rails, postgresql_
+- **UI:** _tailwind, custom css_, _react-bootstrap_
+- other libraries: _react-router-dom_, _react-icon_
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Known Bugs
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    - No known bugs to this point
 
-### Code Splitting
+## Future Versions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    - Add chat functionalities
+    - Add donations options, i.e., PayPal, VISA, etc.
 
-### Analyzing the Bundle Size
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Mary Wanyama](https://github.com/Mary-Wanyama)
+- [Felix Barosio](https://github.com/Felix-Barosio)
+- [Stephen Kairu](https://github.com/StephenKairu)
+- [Halkano Malise](https://github.com/malise5)
 
-### Making a Progressive Web App
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Chiriku is open source and welcomes contributions. If you are interested in contributing, please contact us at info@chiriku.com.
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is under [MIT](LICENSE).
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Go Back to the Top](#chiriku)
