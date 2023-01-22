@@ -14,6 +14,7 @@ import NewAlert from "./NewReport/NewAlert";
 import LandingPage from "./Components/Landingpage/LandingPage";
 import Alerts from "./Components/Home/Alerts";
 import MyAlerts from "./Components/Home/MyAlerts";
+import Test from "./Components/Home/test";
 
 
 
@@ -26,7 +27,7 @@ function App() {
         <Route exact path="/profile" element={<Profile />} />
         <Route exact path="/newreport" element={<NewReport />} />
         <Route exact path="/home" element={<Home />} />
-        <Route exact path="/myposts" element={<MyPosts />} />
+        <Route exact path="/myreports" element={<MyPosts />} />
         <Route exact path="/map" element={<Maps />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/login" element={<Login />} />
@@ -34,7 +35,8 @@ function App() {
         <Route exact path="/signup" element={<Signupform />} />
         <Route exact path="/newalert" element={<NewAlert />} />
         <Route exact path="/alert" element={<Alerts />} />
-        <Route exact path="/myalert" element={<MyAlerts />} />
+        <Route exact path="/myalerts" element={<MyAlerts />} />
+        <Route exact path="/test" element={<Test/>} />
       </Routes>
     </div>
   );

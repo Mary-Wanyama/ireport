@@ -8,7 +8,7 @@ function Home(){
     const [image, setImage] = useState('')
     const [message, setMessage] = useState('')
     const [identity, setIdentity] =useState(1)
-    const url = "https://reporting-production.up.railway.app/reveals"
+    const url = "http://localhost:3000/reveals"
     const urlpath = url + "/" + identity
     useEffect(()=>{
         fetch(url)
