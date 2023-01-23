@@ -8,7 +8,7 @@ function Home(){
     const [image, setImage] = useState('')
     const [message, setMessage] = useState('')
     const [identity, setIdentity] =useState(1)
-    const url = "http://localhost:3000/reveals"
+    const url = "https://reporting-production.up.railway.app/reveals"
     const urlpath = url + "/" + identity
     useEffect(()=>{
         fetch(url)
@@ -55,7 +55,7 @@ function Home(){
 
 <div className="home-row"> 
   <div>
-  {data.map((reports)=>( 
+  {data.sort((a,b) => a.id < b.id ? 1 : -1).map((reports)=>( 
           
           <div key={reports.id} className='card-home' onClick={()=>{ setIdentity(reports.id)}}>
               <div className='home-div'>

@@ -22,8 +22,8 @@ function Test() {
 
   return (
     <div className='bg-slate-200 grid'>
-    <div className="divide-y w-1/2 rounded-xl p-9 md:p-0 dark:bg-slate-900 shadow-2xl my-5">
-    <nav className="py-4 px-6 text-sm font-medium  bg-slate-100">
+    <div className="divide-y w-1/2 rounded p-9 md:p-0 dark:bg-slate-900 shadow-2xl my-5">
+    <nav className="py-4 px-6 text-sm rounded font-medium  bg-slate-100">
       <ul className="flex space-x-3">
 
       <li>
@@ -53,11 +53,11 @@ function Test() {
 
 
 
-        <article className="flex items-start space-x-6 p-6 mb-1  bg-slate-100">
+        <article className="flex items-start space-x-6 p-6 mb-1 rounded-xl  bg-slate-100">
         <img src={report.report_image} alt="" width="80" height="88" className="flex-none rounded-md bg-slate-100" />
         <div className="min-w-0 relative flex-auto">
         <div>
-            <h2 className="font-medium text-3xl text-slate-900 truncate ml-0">{report.report_title}</h2>
+            <h2 className="font-medium text-3xl text-slate-900 truncate ml-0 mb-3">{report.report_title}</h2>
             </div>
             <dl className="mt-2 flex flex-wrap text-sm leading-6 font-medium">
             <div className="absolute top-0 right-0 flex items-center space-x-1">
