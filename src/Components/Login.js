@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import AuthContext from "../context/AuthProvider";
 import axios from "../api/axios";
 
-LOGIN_URL = '/login'
+const LOGIN_URL = '/login' 
 
 const Login = ({ toggleForm }) => {
 
