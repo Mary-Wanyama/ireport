@@ -11,7 +11,7 @@ const LOGIN_URL = '/login'
 const Login = ({ toggleForm }) => {
 
   const {setAuth} = useContext(AuthContext)
-  const [pwd, setPwd] = useState("");
+  const [password, setPwd] = useState("");
   const [username, setUser] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false)
@@ -25,23 +25,23 @@ useEffect(()=>{
 }, [])
 useEffect(()=>{
   setErrMsg('')
-}, [username, pwd])
+}, [username, password])
 
     const handleSubmit = async (e)=>{
     e.preventDefault()
       try {
         const response = await axios.post(LOGIN_URL, 
-          JSON.stringify({user, pwd}),
+          JSON.stringify({username, password}),
           {
             headers: {'Content-Type': 'application/json', 
             withCredentials: true
           }
           }
           )
-          console.log(username, pwd)
+          console.log(username, password)
           const accessToken = response?.data?.accessToken
           const roles = response?.data?.roles
-          setAuth({username, pwd, roles, accessToken})
+          setAuth({username, password, roles, accessToken})
           setUser('')
           setPwd('')
           setSuccess(true)
@@ -71,7 +71,7 @@ useEffect(()=>{
           autoComplete="off"
           required
           name="username"
-          value={user}
+          value={username}
           onChange={(e) => setUser(e.target.value)}
         />
         <label htmlFor="password" className="text-green-800 font-bold">Password</label>
@@ -82,7 +82,7 @@ useEffect(()=>{
           id="password"
           placeholder="**********"
           name="password"
-          value={pwd}
+          value={password}
           onChange={(e) => setPwd(e.target.value)}
         />
         <button className="btn bg-green-800 text-lg border-4 text-white py-1 hover:text-black">Login</button>

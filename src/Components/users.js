@@ -38,7 +38,7 @@ const Users =()=>{
             ? (
                 <ul>
                     {users.map((user, index) =>
-                    <li key={i}>{user?.username}</li>
+                    <li key={index}>{user?.username}</li>
                     )}
                 </ul>
             ): <p>No users to display</p>

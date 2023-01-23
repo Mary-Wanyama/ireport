@@ -9,7 +9,7 @@ import axios from "../api/axios";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3, 23}$/
 
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8, 24}$/
+const password_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8, 24}$/
 
 const EMAIL_REGEX= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
@@ -26,7 +26,7 @@ const Signupform = ({ toggleForm }) => {
 
   const [validMatch, setValidMatch] = useState(false)
   const [matchFocus, setMatchFocus] = useState(false)
-  const [matchPwd, setMatchPwd] = useState('')
+  const [matchpassword, setMatchpassword] = useState('')
 
  
 
@@ -40,9 +40,9 @@ const Signupform = ({ toggleForm }) => {
   const [validEmail, setValidEmail] = useState(false)
   const [emailFocus, setEmailFocus] = useState(false)
 
-  const [pwd, setPassword] = useState("");
-  const [validPwd, setValidPwd] = useState(false)
-  const [pwdFocus, setPwdFocus] = useState(false)
+  const [password, setPassword] = useState("");
+  const [validpassword, setValidpassword] = useState(false)
+  const [passwordFocus, setpasswordFocus] = useState(false)
 
   const [errMsg, setErrMsg] = useState("")
   const [success, setSuccess] = useState(false)
@@ -59,18 +59,18 @@ const Signupform = ({ toggleForm }) => {
   }, [username])
 
   useEffect(()=>{
-    const result = USER_REGEX.test(pwd) 
+    const result = USER_REGEX.test(password) 
     console.log(result)
-    console.log(pwd) 
-    setValidPwd(result)
+    console.log(password) 
+    setValidpassword(result)
 
-    const match = pwd===matchPwd 
+    const match = password===matchpassword 
     setValidMatch(match)
-  }, [pwd, matchPwd])
+  }, [password, matchpassword])
 
   useEffect(()=>{
     setErrMsg('')
-  }, [username, pwd, matchPwd])
+  }, [username, password, matchpassword])
 
 const REGISTER_URL = "/signup"
 
@@ -79,7 +79,7 @@ const REGISTER_URL = "/signup"
 
     const v1 = USER_REGEX.test(username)
     const v2 = EMAIL_REGEX.test(email)
-    const v3 = PWD_REGEX.test(password)
+    const v3 = password_REGEX.test(password)
 
     if (!v1 || !v2 || !v3){
       setErrMsg("invalid inputs")
@@ -90,7 +90,7 @@ const REGISTER_URL = "/signup"
         JSON.stringify({
           username, 
           email,
-          pwd
+          password
         }), 
         {
           headers: { 'Content-Type': 'application/json' },
@@ -161,23 +161,23 @@ const REGISTER_URL = "/signup"
           placeholder="**********"
           name="password"
           required
-          value={pwd}
+          value={password}
           onChange={(event) => setPassword(event.target.value)}
           // value={form.password}
           // onChange={handleChange}
-          aria-invalid = {validPwd ? "false" : "true"}
-          onBlur = {()=> setPwdFocus(false)}
-          onFocus = {()=> setPwdFocus(true)}
+          aria-invalid = {validpassword ? "false" : "true"}
+          onBlur = {()=> setpasswordFocus(false)}
+          onFocus = {()=> setpasswordFocus(true)}
         />
-                <label htmlFor="confirm_pwd" className="text-green-800 font-bold">confirm password</label>
+                <label htmlFor="confirm_password" className="text-green-800 font-bold">confirm password</label>
         <input className="text-black"
           type="password"
           id="password"
           placeholder="**********"
           name="password"
           required
-          value={matchPwd}
-          onChange={(event) => setMatchPwd(event.target.value)}
+          value={matchpassword}
+          onChange={(event) => setMatchpassword(event.target.value)}
           onBlur = {() =>setMatchFocus(false)}
           onFocus = {() =>setMatchFocus(true)}
           // value={form.password}
@@ -187,7 +187,7 @@ const REGISTER_URL = "/signup"
         <button className="btn bg-green-800 hover:bg-yellow-500 hover:border-yellow-500 text-lg border-4 text-black py-1">Sign-Up</button>
       </form>
 
-      <button className="link btn bg-green-800" onClick={() => toggleForm("login")}  disabled={!validName || !validMatch || !validEmail || !validPwd}>
+      <button className="link btn bg-green-800" onClick={() => toggleForm("login")}  disabled={!validName || !validMatch || !validEmail || !validpassword}>
         Already have an account? Login here.
       </button>
       <ToastContainer />
