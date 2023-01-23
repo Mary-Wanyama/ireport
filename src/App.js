@@ -16,6 +16,7 @@ import Alerts from "./Components/Home/Alerts";
 import MyAlerts from "./Components/Home/MyAlerts";
 import AdminAlerts from "./Components/Home/AdminAlerts";
 import Email from "./Components/Home/email";
+import Admin from "./Components/admin";
 
 
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
+        <Route exact path="/adminpage" element={<Admin/>} />
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/profile" element={<Profile />} />

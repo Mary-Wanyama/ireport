@@ -1,51 +1,65 @@
 import React from "react";
 import "./Form.css";
-import { useState } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AuthContext from "../context/AuthProvider";
+import axios from "../api/axios";
+
+LOGIN_URL = '/login'
 
 const Login = ({ toggleForm }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [user, setUser] = useState("");
-  
-  // const [form, setForm] = useState({
-  //   username: "",
-  //   password: "",
-  // });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch("https://reporting-production.up.railway.app/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password })
-    }).then((data) => {
-      if (data.ok) {
-        data.json().then((user) => {
-          setUser(user);
-          if (user.role === false) {
-            window.location.href = "/admin";
-          } else {
-            window.location.href = "/home";
+  const {setAuth} = useContext(AuthContext)
+  const [pwd, setPwd] = useState("");
+  const [username, setUser] = useState("");
+  const [errMsg, setErrMsg] = useState("");
+  const [success, setSuccess] = useState(false)
+
+ const userRef = useRef()
+  const errRef = useRef()
+
+
+useEffect(()=>{
+  userRef.current.focus();
+}, [])
+useEffect(()=>{
+  setErrMsg('')
+}, [username, pwd])
+
+    const handleSubmit = async (e)=>{
+    e.preventDefault()
+      try {
+        const response = await axios.post(LOGIN_URL, 
+          JSON.stringify({user, pwd}),
+          {
+            headers: {'Content-Type': 'application/json', 
+            withCredentials: true
           }
-        });
+          }
+          )
+          console.log(username, pwd)
+          const accessToken = response?.data?.accessToken
+          const roles = response?.data?.roles
+          setAuth({username, pwd, roles, accessToken})
+          setUser('')
+          setPwd('')
+          setSuccess(true)
+      } catch (err) {
+        if(!err?.response){
+          setErrMsg("no service available")
+        }else if (err.response?.status===400){ 
+        setErrMsg("missing Username or Password")
+      }else if (err.response?.status ==401){
+        setErrMsg("Unauthorized")
       }else {
-        toast.error("Incorrect password or username", {
-          position: "top-center",
-        });
+        setErrMsg("login failed")
       }
-    });
-    console.log(user);
-  };
+      errRef.current.focus();
 
+    }
+  }
 
-  // const handleChange = (e) => {
-  //   setForm({ ...form, [e.target.name]: e.target.value });
-  // };
-  // console.log(form);
   return (
     <div className="auth-form text-black">
       <form onSubmit={handleSubmit} className="login-form">
@@ -54,18 +68,22 @@ const Login = ({ toggleForm }) => {
           type="username"
           id="username"
           placeholder="username"
+          autoComplete="off"
+          required
           name="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={user}
+          onChange={(e) => setUser(e.target.value)}
         />
         <label htmlFor="password" className="text-green-800 font-bold">Password</label>
         <input className="text-black"
           type="password"
+          required
+          autoComplete="off"
           id="password"
           placeholder="**********"
           name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={pwd}
+          onChange={(e) => setPwd(e.target.value)}
         />
         <button className="btn bg-green-800 text-lg border-4 text-white py-1 hover:text-black">Login</button>
       </form>
@@ -78,4 +96,4 @@ const Login = ({ toggleForm }) => {
   );
 };
 
-export default Login;
+export default Login
