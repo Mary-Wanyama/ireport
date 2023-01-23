@@ -55,7 +55,7 @@ function Home(){
 
 <div className="home-row"> 
   <div>
-  {data.map((reports)=>( 
+  {data.sort((a,b) => a.id < b.id ? 1 : -1).map((reports)=>( 
           
           <div key={reports.id} className='card-home' onClick={()=>{ setIdentity(reports.id)}}>
               <div className='home-div'>
