@@ -14,7 +14,7 @@ function Home(){
         fetch(url)
         .then(res=>res.json())
         .then(json =>{
-            setData(json)
+            setData(json.reverse())
             
         })
     }, [])
