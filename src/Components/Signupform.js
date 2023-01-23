@@ -134,7 +134,7 @@ const REGISTER_URL = "/signup"
            required
           onFocus = {()=> setUserFocus(true)}
           onBlur = {()=> setUserFocus(false)}
-          aria-invalid = {validName ? "false" : "true"}
+          // aria-invalid = {validName ? "false" : "true"}
           
         />
         <label htmlFor="email" className="text-green-800 font-bold">Email</label>
