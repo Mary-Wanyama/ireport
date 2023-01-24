@@ -26,6 +26,7 @@ const Signupform = ({ toggleForm }) => {
     formData.append('user[username]', e.target.username.value)
     formData.append('user[password]', e.target.password.value)
     formData.append("user[avatar]", e.target.avatar.files[0])
+    // formData.append("user[avatar]", fileInput.current.files[0])
     submitToAPI(formData);
 
 
@@ -38,28 +39,52 @@ const Signupform = ({ toggleForm }) => {
 //    // return;
 //  }
 
-    function submitToAPI(formData) {
-      fetch("http://localhost:3000/signup", {
-        method: "POST",
-        body: formData
-      })
-      .then((response) => response.json())
-      .then((formData) => {
-        // if (data.ok) {
-        //   setRegistered(true);}
-        if (formData.error) {
-          toast.error(formData.message, {
-            position: "top-center",
-          });
-        } else {
-          toast.success("Signed up successfully", {
-            position: "top-center",
-          });
-        }
+  //   function submitToAPI(formData) {
+  //     fetch("http://localhost:3000/signup", {
+  //       method: "POST",
+  //       body: formData
+  //     })
+  //     .then((response) => response.json())
+  //     .then((formData) => {
+  //       // if (data.ok) {
+  //       //   setRegistered(true);}
+  //       if (formData.error) {
+  //         toast.error(formData.message, {
+  //           position: "top-center",
+  //         });
+  //       } else {
+  //         toast.success("Signed up successfully", {
+  //           position: "top-center",
+  //         });
+  //       }
 
-        setRegistered(true);
-      });
-  };
+  //       setRegistered(true);
+  //     });
+  // };
+
+  function submitToAPI(formData) {
+    fetch("http://localhost:3000/signup", {
+      method: "POST",
+      body: formData
+    })
+    .then((response) => response.json())
+    .then((formData) => {
+      // if (data.ok) {
+      //   setRegistered(true);}
+      if (formData.error) {
+        toast.error(formData.message, {
+          position: "top-center",
+        });
+      } else {
+        toast.success("Signed up successfully", {
+          position: "top-center",
+        });
+      }
+
+      setRegistered(true);
+    });
+};
+
 
   // if (registered) {
   //   return <Navigate to="/register" />;

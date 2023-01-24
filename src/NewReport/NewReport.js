@@ -1,6 +1,9 @@
 import { useState } from "react"
 import React from 'react'
 import Sidebar from "../SideBar/SideBar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 function NewReport() {
 
@@ -12,6 +15,8 @@ function NewReport() {
   //   message:"",
   //   user_id: "",
   // }])
+
+  const [submitted, setSubmitted] = useState(false);
 
 
   const handleSaveReport = (e) => {
@@ -33,11 +38,27 @@ function NewReport() {
         body: formData
       })
       .then((response) => response.json())
-      .then((formData) => { setFormData(formData)
+      .then((formData) => {
         // if (data.ok) {
         //   setRegistered(true);}
+        if (formData.error) {
+          toast.error(formData.message, {
+            position: "top-center",
+          });
+        } else {
+          toast.success("Signed up successfully", {
+            position: "top-center",
+          });
+        }
+  
+        setSubmitted(true);
       });
   };
+  
+  
+    if (submitted) {
+      return <Navigate to="/home" />;
+    }
 
     };
 
