@@ -8,7 +8,7 @@ function Home(){
     const [image, setImage] = useState('')
     const [message, setMessage] = useState('')
     const [identity, setIdentity] =useState(1)
-    const url = "https://reporting-production.up.railway.app/reveals"
+    const url = "https://ireporter-backend-render.onrender.com/reports"
     const urlpath = url + "/" + identity
     useEffect(()=>{
         fetch(url)
@@ -59,7 +59,7 @@ function Home(){
           
           <div key={reports.id} className='card-home' onClick={()=>{ setIdentity(reports.id)}}>
               <div className='home-div'>
-                  <img src={reports.report_image} alt="avatar"/>
+                  <img src={reports.report_image} className="w-30 h-24" alt="avatar"/>
               </div>
               <div className="home-content">
                   <h2>{reports.report_title}</h2>

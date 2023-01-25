@@ -16,7 +16,7 @@ const Login = ({ toggleForm }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/login", {
+    fetch("https://ireporter-backend-render.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const Login = ({ toggleForm }) => {
       if (data.ok) {
         data.json().then((user) => {
           setUser(user);
-          if (user.role == "admin") {
+          if (user.role === "admin") {
             window.location.href = "/admin";
           } else {
             window.location.href = "/home";

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import React from 'react'
 import Sidebar from "../SideBar/SideBar";
+import { Navigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -23,17 +24,19 @@ function NewReport() {
         e.preventDefault();
 
     const formData = new FormData();
+    formData.append('report[user_id]', 1)
     formData.append('report[report_category]', e.target.report_category.value)
     formData.append('report[report_title]', e.target.report_title.value)
     formData.append('report[report_address]', e.target.report_address.value)
     formData.append('report[report_message]', e.target.report_message.value)
+    // formData.append("report[evidence]", e.target.evidence.files[0])
     for (let i = 0; i < e.target.evidence.files.length; i++) {
-    formData.append("report[evidences][]", e.target.evidence.files[i], e.target.evidence.files[i].name)}
+    formData.append("report[evidence][]", e.target.evidence.files[i], e.target.evidence.files[i].name)}
     submitToAPI(formData);
 
 
     function submitToAPI(formData) {
-      fetch("http://localhost:3000/reports", {
+      fetch("https://ireporter-backend-render.onrender.com/reports", {
         method: "POST",
         body: formData
       })
@@ -46,7 +49,7 @@ function NewReport() {
             position: "top-center",
           });
         } else {
-          toast.success("Signed up successfully", {
+          toast.success("Report Submitted Successfully", {
             position: "top-center",
           });
         }
@@ -80,11 +83,22 @@ function NewReport() {
   {/* </figure> */}
   </div>
 <form className='w-96 place-self-center text-black' onSubmit ={(e)=> {handleSaveReport(e)}}>
+
+      {/* <label htmlFor="user_id" class="block mb-1">
+        <span class="block text-lg font-medium text-white text-center">User</span>
+        <input type="text" name="user_id" 
+        value={1} 
+        // onChange={handleChange} 
+        class="my-1 block w-full px-3 py-1 
+        bg-gray-300 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 text-black
+          focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"/>
+      </label> */}
+  
  
       <label htmlFor="report_category" class="block mb-1">
         <span class="block text-lg font-medium text-white text-center">Choose Category</span>
       <div className="relative" >
-        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+        <select name="report_category" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
           <option>Red Flag (An incident linked to corruption)</option>
           <option>Intervention (A call for a government agency to intervene e.g repair bad road sections, collapsed bridges).</option>
         </select>
@@ -106,7 +120,7 @@ function NewReport() {
       <label htmlFor="evidence" class="grid my-1">
         {/* <span class="sr-only">Choose profile photo</span> */}
         <span class="block text-lg font-medium text-white text-center">Evidence</span>
-        <input type="file" name="evidence" 
+        <input multiple type="file" name="evidence" 
         // value={formData.evidence} onChange={handleChange} 
         class="block place-self-center my-1 w-full text-base text-black
           file:mr-4 file:py-2 file:px-4
@@ -138,6 +152,7 @@ function NewReport() {
       </button>
     </form>
     </div>
+    <ToastContainer />
     </div>
   )
 }

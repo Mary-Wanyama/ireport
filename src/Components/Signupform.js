@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./Form.css";
-// import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import Showimage from "./showimage";
@@ -63,7 +63,7 @@ const Signupform = ({ toggleForm }) => {
   // };
 
   function submitToAPI(formData) {
-    fetch("http://localhost:3000/signup", {
+    fetch("https://ireporter-backend-render.onrender.com/signup", {
       method: "POST",
       body: formData
     })
@@ -86,9 +86,9 @@ const Signupform = ({ toggleForm }) => {
 };
 
 
-  // if (registered) {
-  //   return <Navigate to="/register" />;
-  // }
+  if (registered) {
+    return <Navigate to="/register" />;
+  }
 
     }
 
@@ -209,12 +209,12 @@ const Signupform = ({ toggleForm }) => {
       </form>
 
       <button className="link btn bg-green-800" onClick={() => toggleForm("login")}>
-        Already have an account? Login here.
+        Signed up? Login here.
       </button>
 
       {/* <Showimage /> */}
       <ToastContainer />
-        {/* {registered && <Navigate to="/register" />} */}
+        {registered && <Navigate to="/register" />}
     </div>
   );
 };
