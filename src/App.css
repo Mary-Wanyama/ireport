@@ -2,7 +2,24 @@
   text-align: center;
   /* background-color: #007151; */
 }
-
+::-webkit-scrollbar {
+    width: 0.5vw;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: white; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(101, 42, 14); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: gold; 
+  }
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;
